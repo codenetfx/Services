@@ -1,0 +1,30 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.View.ProjectEmail
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Project Creation";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	var projectDetails = string.Format("{0}Project/Index/{1}", config.AriaRootUri, Model.ProjectId.ToString("N"));
+}
+
+<p>ARIA - @Model.RecipientName</p>
+<p>
+	@Model.ActorName has created and assigned the following project to you.
+</p>
+<p>
+	<strong>Project</strong><br/>
+	ARIA - @Model.ProjectName
+</p>
+<p>
+	&raquo; <a href="@projectDetails">See this project on the UL Portal</a>
+</p>
+<p>
+    Click on the link above to view Project Details.  There may be a slight delay before the new Project is available in the Projects list.
+</p>
+<p>
+	If you feel this project has been assigned to you in error, please contact <a href="mailto:@Model.ActorLoginId">@Model.ActorName</a>.
+</p>
+<p>
+	Thank You,<br />
+	portalservices@ul.com
+</p>

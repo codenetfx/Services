@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="UL.Aria.Service.Host.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="UL.Aria.Service.Host">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ULAdmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECLwHkyc8l+eSoa6Kt/ir2wwDQYJKoZIhvcNAQEBBQAEggEAm0ebijurxXGOi/WRB/ugWnxJmGmNlcbHkEUQX2M80uTVk/ULZrEtIIeY+3YuRp6PZMmawQtyVMGHEN1VJGtqTmBUajL+7rfi+erzKlS4Uy7XTaGU/BMyqK7OGtX2ITRTTJrV9bF4V8G9EmyE9I57NvCiV7V48CzkQqfADT6luuCfgx4nr1QaMhYqVjbZkPDkO02pg1ejkwae/5ibuUsUwPasTvVwTvshR4kbsxoo6C5Glwpz/JR0eBASRNnNV2lpTtmFP0kJCdb3vMczcatwZod/Q3okVwZBlfJEJUqfnimUVqtUT+n7doukn+GcW13XC+1bsaX7OOWB5CwB8amdlDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECGKrcqxnfem3gBA/yPjyHq7ArRtpeOKRu2Lw" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2100-01-09T23:59:59.0000000-05:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+      <Setting name="EnvironmentName" value="Production.PD16" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=ariaprodinbmsg;AccountKey=ii3Q6ZDG1tC+nCKCG/IZ5McVM8V7M2YaWs3ydDsGciHdngayLFEoi7XCjzVawG9hoKysOOC+wy4MR2KD2ZiTTg==" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="9A0CAEF4E1AED831DCB74D47160EC4831EBCAFC8" thumbprintAlgorithm="sha1" />
+      <Certificate name="SP.Contoso.com" thumbprint="8B03BFE463839AF940EFDDB520EBF97E39A0450F" thumbprintAlgorithm="sha1" />
+      <Certificate name="Localhost" thumbprint="8c1bd39e20dc740f520d0d09f481a6a8bc54fce1" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="UL.Aria.Web.Portal">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ULAdmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECLwHkyc8l+eSoa6Kt/ir2wwDQYJKoZIhvcNAQEBBQAEggEAm0ebijurxXGOi/WRB/ugWnxJmGmNlcbHkEUQX2M80uTVk/ULZrEtIIeY+3YuRp6PZMmawQtyVMGHEN1VJGtqTmBUajL+7rfi+erzKlS4Uy7XTaGU/BMyqK7OGtX2ITRTTJrV9bF4V8G9EmyE9I57NvCiV7V48CzkQqfADT6luuCfgx4nr1QaMhYqVjbZkPDkO02pg1ejkwae/5ibuUsUwPasTvVwTvshR4kbsxoo6C5Glwpz/JR0eBASRNnNV2lpTtmFP0kJCdb3vMczcatwZod/Q3okVwZBlfJEJUqfnimUVqtUT+n7doukn+GcW13XC+1bsaX7OOWB5CwB8amdlDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECGKrcqxnfem3gBA/yPjyHq7ArRtpeOKRu2Lw" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2100-01-09T23:59:59.0000000-05:00" />
+      <Setting name="EnvironmentName" value="Production.PD16" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=ariaprodinbmsg;AccountKey=ii3Q6ZDG1tC+nCKCG/IZ5McVM8V7M2YaWs3ydDsGciHdngayLFEoi7XCjzVawG9hoKysOOC+wy4MR2KD2ZiTTg==" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="9A0CAEF4E1AED831DCB74D47160EC4831EBCAFC8" thumbprintAlgorithm="sha1" />
+      <Certificate name="SP.Contoso.com" thumbprint="8B03BFE463839AF940EFDDB520EBF97E39A0450F" thumbprintAlgorithm="sha1" />
+      <Certificate name="Localhost" thumbprint="8c1bd39e20dc740f520d0d09f481a6a8bc54fce1" thumbprintAlgorithm="sha1" />
+      <Certificate name="AriaPortalSslCert" thumbprint="4951f4cb87bf55d0f77be8548fe484096285b6cb" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="UL.Aria.Service.InboundMessageProcessor.WebJob">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ULAdmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECLwHkyc8l+eSoa6Kt/ir2wwDQYJKoZIhvcNAQEBBQAEggEAm0ebijurxXGOi/WRB/ugWnxJmGmNlcbHkEUQX2M80uTVk/ULZrEtIIeY+3YuRp6PZMmawQtyVMGHEN1VJGtqTmBUajL+7rfi+erzKlS4Uy7XTaGU/BMyqK7OGtX2ITRTTJrV9bF4V8G9EmyE9I57NvCiV7V48CzkQqfADT6luuCfgx4nr1QaMhYqVjbZkPDkO02pg1ejkwae/5ibuUsUwPasTvVwTvshR4kbsxoo6C5Glwpz/JR0eBASRNnNV2lpTtmFP0kJCdb3vMczcatwZod/Q3okVwZBlfJEJUqfnimUVqtUT+n7doukn+GcW13XC+1bsaX7OOWB5CwB8amdlDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECGKrcqxnfem3gBA/yPjyHq7ArRtpeOKRu2Lw" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2100-01-09T23:59:59.0000000-05:00" />
+      <Setting name="EnvironmentName" value="Production.PD16" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=ariaprodinbmsg;AccountKey=ii3Q6ZDG1tC+nCKCG/IZ5McVM8V7M2YaWs3ydDsGciHdngayLFEoi7XCjzVawG9hoKysOOC+wy4MR2KD2ZiTTg==" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="9A0CAEF4E1AED831DCB74D47160EC4831EBCAFC8" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="UL.Aria.Service.ContactProcessor.WebJob">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="ULAdmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECLwHkyc8l+eSoa6Kt/ir2wwDQYJKoZIhvcNAQEBBQAEggEAm0ebijurxXGOi/WRB/ugWnxJmGmNlcbHkEUQX2M80uTVk/ULZrEtIIeY+3YuRp6PZMmawQtyVMGHEN1VJGtqTmBUajL+7rfi+erzKlS4Uy7XTaGU/BMyqK7OGtX2ITRTTJrV9bF4V8G9EmyE9I57NvCiV7V48CzkQqfADT6luuCfgx4nr1QaMhYqVjbZkPDkO02pg1ejkwae/5ibuUsUwPasTvVwTvshR4kbsxoo6C5Glwpz/JR0eBASRNnNV2lpTtmFP0kJCdb3vMczcatwZod/Q3okVwZBlfJEJUqfnimUVqtUT+n7doukn+GcW13XC+1bsaX7OOWB5CwB8amdlDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECGKrcqxnfem3gBA/yPjyHq7ArRtpeOKRu2Lw" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2100-01-09T23:59:59.0000000-05:00" />
+      <Setting name="EnvironmentName" value="Production.PD16" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=ariaprodinbmsg;AccountKey=ii3Q6ZDG1tC+nCKCG/IZ5McVM8V7M2YaWs3ydDsGciHdngayLFEoi7XCjzVawG9hoKysOOC+wy4MR2KD2ZiTTg==" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="9A0CAEF4E1AED831DCB74D47160EC4831EBCAFC8" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <NetworkConfiguration>
+    <!--<AccessControls>
+			<AccessControl name="aclName1">
+				<Rule order="100" action= "permit" remoteSubnet="subnet-address" description="rule-description"/>
+      </AccessControl>
+		</AccessControls>-->
+    <!--<EndpointAcls>
+			<EndpointAcl role="role-name" endpoint="3389" accessControl="aclName1"/>
+    </EndpointAcls>-->
+    <Dns>
+      <DnsServers>
+        <DnsServer name="PD16Ad1" IPAddress="10.0.1.4" />
+        <DnsServer name="PD16Ad2" IPAddress="10.0.1.5" />
+      </DnsServers>
+    </Dns>
+    <VirtualNetworkSite name="PD16ariavirtualnetwork" />
+    <AddressAssignments>
+      <InstanceAddress roleName="UL.Aria.Service.Host">
+        <Subnets>
+          <Subnet name="default-dynamic" />
+        </Subnets>
+      </InstanceAddress>
+      <InstanceAddress roleName="UL.Aria.Web.Portal">
+        <Subnets>
+          <Subnet name="default-dynamic" />
+        </Subnets>
+      </InstanceAddress>
+    </AddressAssignments>
+    <LoadBalancers>
+      <LoadBalancer name="ServiceLoadBalancer">
+        <FrontendIPConfiguration type="private" subnet="default-static" staticVirtualNetworkIPAddress="10.0.2.5" />
+      </LoadBalancer>
+    </LoadBalancers>
+  </NetworkConfiguration>
+</ServiceConfiguration>

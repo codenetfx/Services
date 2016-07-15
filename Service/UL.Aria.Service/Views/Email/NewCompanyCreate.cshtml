@@ -1,0 +1,19 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.View.NewCompanyEmail
+@{
+    Layout = "~/Email/_Layout.cshtml";
+    ViewBag.Title = "Create New Customer Company Profile";
+    var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+    var forString = string.Empty;
+}
+
+<p>Attention UL Portal Extranet Administrator:</p>
+<p>
+    Order <strong> @Model.OrderNumber</strong> has been routed to the UL Portal for fulfillment.  
+</p>
+
+<p>
+    Please create a new customer company profile
+    @{forString = Model.CompanyName != null ? "for" : string.Empty;}
+    @forString <strong>@Model.CompanyName</strong> under Account Number <strong>@Model.AccountNumber</strong> as soon as possible.
+</p>

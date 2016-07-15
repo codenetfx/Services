@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D85695B2-7DB0-410D-B9D2-1E72890171EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UL.Aria.Service.Contracts</RootNamespace>
+    <AssemblyName>UL.Aria.Service.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\UL.Aria.Service.Contracts.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\SolutionItems\UL.Aria.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_NoFxCop|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_NoFxCop\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\UL.Aria.Service.Contracts.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\SolutionItems\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SolutionItems\TestAssemblyInfo.cs">
+      <Link>Properties\TestAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Dto\CertificationManagementDto.cs" />
+    <Compile Include="Dto\DepartmentCodeDto.cs" />
+    <Compile Include="Dto\DocumentProperties.cs" />
+    <Compile Include="Dto\CertificationRequestDto.cs" />
+    <Compile Include="Dto\DocumentTemplateSearchResultSetDto.cs" />
+    <Compile Include="Dto\AriaAsset.cs" />
+    <Compile Include="Dto\AriaCreateContainerRequestDto.cs" />
+    <Compile Include="Dto\AriaMetaDataItem.cs" />
+    <Compile Include="Dto\AriaMetaDataLinkDto.cs" />
+    <Compile Include="Dto\AssetLinkDto.cs" />
+    <Compile Include="Dto\BusinessUnitSearchResultDto.cs" />
+    <Compile Include="Dto\BusinessUnitSearchResultSetDto.cs" />
+    <Compile Include="Dto\ContactOrderDto.cs" />
+    <Compile Include="Dto\DocumentDto.cs" />
+    <Compile Include="Dto\DocumentTemplateDto.cs" />
+    <Compile Include="Dto\DocumentTemplateSearchResultDto.cs" />
+    <Compile Include="Dto\IncomingOrderPartiesDto.cs" />
+    <Compile Include="Dto\IncomingOrderPartyDto.cs" />
+    <Compile Include="Dto\InboundDocumentDto.cs" />
+    <Compile Include="Dto\Integration\OrderFulfillmentSummary.cs" />
+    <Compile Include="Dto\Integration\OrderServiceLine.cs" />
+    <Compile Include="Dto\LinkDto.cs" />
+    <Compile Include="Dto\LinkSearchDto.cs" />
+    <Compile Include="Dto\LocationCodeDto.cs" />
+    <Compile Include="Dto\LookupCodeSearchResultDto.cs" />
+    <Compile Include="Dto\LookupCodeSearchResultSetDto.cs" />
+    <Compile Include="Dto\LookupDto.cs" />
+    <Compile Include="Dto\MetaDeltaDto.cs" />
+    <Compile Include="Dto\InboundMessageDto.cs" />
+    <Compile Include="Dto\OutboundDocumentDto.cs" />
+    <Compile Include="Dto\ProductAttributeIds.cs" />
+    <Compile Include="Dto\ProjectTemplateSearchResultDto.cs" />
+    <Compile Include="Dto\ProjectTemplateSearchResultSetDto.cs" />
+    <Compile Include="Dto\ProjectValidationEnumDto.cs" />
+    <Compile Include="Dto\SearchBaseDto.cs" />
+    <Compile Include="Dto\SqlFieldNames.cs" />
+    <Compile Include="Dto\TaskCategoryDto.cs" />
+    <Compile Include="Dto\TaskChangeResponseDto.cs" />
+    <Compile Include="Dto\TaskDeleteValidationDto.cs" />
+    <Compile Include="Dto\TaskDeleteValidationEnumDto.cs" />
+    <Compile Include="Dto\TaskDeltaDto.cs" />
+    <Compile Include="Dto\AriaUpdateContainerRequestDto.cs" />
+    <Compile Include="Dto\AssetFieldNames.cs" />
+    <Compile Include="Dto\AssetTypeEnumDto.cs" />
+    <Compile Include="Dto\AuditMessageIdEnumDto.cs" />
+    <Compile Include="Dto\BusinessUnitDto.cs" />
+    <Compile Include="Dto\CategoryDto.cs" />
+    <Compile Include="Dto\ClaimDto.cs" />
+    <Compile Include="Dto\CompanySearchModelDto.cs" />
+    <Compile Include="Dto\CompanyUserModelDto.cs" />
+    <Compile Include="Dto\CompanyUserSearchModelDto.cs" />
+    <Compile Include="Dto\ContainerDto.cs" />
+    <Compile Include="Dto\ContainerAvailableClaimDto.cs" />
+    <Compile Include="Dto\ContainerListDto.cs" />
+    <Compile Include="Dto\ContainerListPermissionDto.cs" />
+    <Compile Include="Dto\CustomerOrganizationDto.cs" />
+    <Compile Include="Dto\EntityAttribute.cs" />
+    <Compile Include="Dto\HistoryDto.cs" />
+    <Compile Include="Dto\NameValuePairDto.cs" />
+    <Compile Include="Dto\ServiceCodeDto.cs" />
+    <Compile Include="Dto\NotificationDto.cs" />
+    <Compile Include="Dto\NotificationTypeDto.cs" />
+    <Compile Include="Dto\OrderServiceLineDetailSearchResultDto.cs" />
+    <Compile Include="Dto\OrderServiceLineDetailSearchResultSetDto.cs" />
+    <Compile Include="Dto\OrderServiceLineDetailDto.cs" />
+    <Compile Include="Dto\EmailContactUsDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicAssociationDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicDomainEntityDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicUploadDto.cs" />
+    <Compile Include="Dto\ProductFamilyCreateUpdateRequestDto.cs" />
+    <Compile Include="Dto\ProductFamilyDetailDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureAllowedValueDependencyMappingDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureAllowedValueDependencyUploadDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureAllowedValueDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureAssociationDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureDependencyDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureValueDto.cs" />
+    <Compile Include="Dto\TaskCompletionHistoryDto.cs" />
+    <Compile Include="Dto\TaskProgressEnumDtoExtensions.cs" />
+    <Compile Include="Dto\TaskStatusEnumDtoExtensions.cs" />
+    <Compile Include="Dto\TaskTypeNotificationDto.cs" />
+    <Compile Include="Dto\TaskStatusListDto.cs" />
+    <Compile Include="Dto\TaskStatusHistoryDto.cs" />
+    <Compile Include="Dto\IndustryCodeDto.cs" />
+    <Compile Include="Dto\TaskTemplateDto.cs" />
+    <Compile Include="Dto\TaskCategorySearchModelDto.cs" />
+    <Compile Include="Dto\TaskTypeAvailableBehaviorFieldDto.cs" />
+    <Compile Include="Dto\TaskTypeBehaviorDto.cs" />
+    <Compile Include="Dto\TaskTypeDto.cs" />
+    <Compile Include="Dto\TaskTypeSearchModelDto.cs" />
+    <Compile Include="Dto\TaskValidationEnumDto.cs" />
+    <Compile Include="Dto\UnitOfMeasureDto.cs" />
+    <Compile Include="Dto\FavoriteSearchSearchModelDto.cs" />
+    <Compile Include="Dto\ProductCharacteristicChildType.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicOptionDto.cs" />
+    <Compile Include="Dto\ProductFamilyStatus.cs" />
+    <Compile Include="Dto\ProjectStatusEnumDto.cs" />
+    <Compile Include="Dto\ProjectStatusMessageDto.cs" />
+    <Compile Include="Dto\ProjectStatusMessageServiceLineDto.cs" />
+    <Compile Include="Dto\FavoriteSearchDto.cs" />
+    <Compile Include="Dto\ServiceLineAction.cs" />
+    <Compile Include="Dto\TaskCommentDto.cs" />
+    <Compile Include="Dto\TaskHistoryDto.cs" />
+    <Compile Include="Dto\TaskPredecessorDto.cs" />
+    <Compile Include="Dto\TaskDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicDataType.cs" />
+    <Compile Include="Dto\ProductStatus.cs" />
+    <Compile Include="Dto\ProductUploadResultSearchResultSetDto.cs" />
+    <Compile Include="Dto\ProductUploadResultSearchResultDto.cs" />
+    <Compile Include="Dto\ProductUploadResultDto.cs" />
+    <Compile Include="Dto\ProductUploadMessageDto.cs" />
+    <Compile Include="Dto\ProductUploadMessageTypeEnumDto.cs" />
+    <Compile Include="Dto\ProductUploadStatusEnumDto.cs" />
+    <Compile Include="Dto\ProductUploadDto.cs" />
+    <Compile Include="Dto\ProductUploadSearchResultDto.cs" />
+    <Compile Include="Dto\ProductUploadSearchResultSetDto.cs" />
+    <Compile Include="Dto\EmailRequestDto.cs" />
+    <Compile Include="Dto\EmailResponseDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicTypeDto.cs" />
+    <Compile Include="Dto\IncomingOrderCustomerDto.cs" />
+    <Compile Include="Dto\IncomingOrderContactDto.cs" />
+    <Compile Include="Dto\IncomingOrderDto.cs" />
+    <Compile Include="Dto\IncomingOrderSearchResultDto.cs" />
+    <Compile Include="Dto\IncomingOrderSearchResultSetDto.cs" />
+    <Compile Include="Dto\IncomingOrderServiceLineDto.cs" />
+    <Compile Include="Dto\ProductCharacteristicDto.cs" />
+    <Compile Include="Dto\ProductDto.cs" />
+    <Compile Include="Dto\ProductFamilyAttributeDto.cs" />
+    <Compile Include="Dto\BusinessClaimDto.cs" />
+    <Compile Include="Dto\ProductFamilyFeatureDto.cs" />
+    <Compile Include="Dto\ProductFamiliesDto.cs" />
+    <Compile Include="Dto\ProductFamilyCharacteristicDto.cs" />
+    <Compile Include="Dto\ProductFamilyDto.cs" />
+    <Compile Include="Dto\CompanyDto.cs" />
+    <Compile Include="Dto\PrimarySearchEntityBaseDto.cs" />
+    <Compile Include="Dto\ContainerRoleDto.cs" />
+    <Compile Include="Dto\EntityTypeEnumDto.cs" />
+    <Compile Include="Dto\OrderMessageDto.cs" />
+    <Compile Include="Dto\ProductFamilyIdValuePairDto.cs" />
+    <Compile Include="Dto\ProductFamilyTemplate.cs" />
+    <Compile Include="Dto\ProjectDto.cs" />
+    <Compile Include="Dto\RefinementItemDto.cs" />
+    <Compile Include="Dto\SearchResultDto.cs" />
+    <Compile Include="Dto\SearchResultSetDto.cs" />
+    <Compile Include="Dto\SearchCriteriaDto.cs" />
+    <Compile Include="Dto\DocumentPermissionEnumDto.cs" />
+    <Compile Include="Dto\DocumentTypeDto.cs" />
+    <Compile Include="Dto\ProfileBasicDto.cs" />
+    <Compile Include="Dto\ProfileDto.cs" />
+    <Compile Include="Dto\ProfileImageDto.cs" />
+    <Compile Include="Dto\ProfileSearchSpecificationDto.cs" />
+    <Compile Include="Dto\SearchSummaryDto.cs" />
+    <Compile Include="Dto\SortDirectionDto.cs" />
+    <Compile Include="Dto\SortDto.cs" />
+    <Compile Include="Dto\TaskProgressEnumDto.cs" />
+    <Compile Include="Dto\TaskSearchResultDto.cs" />
+    <Compile Include="Dto\TaskSearchResultSetDto.cs" />
+    <Compile Include="Dto\TaskStatusEnumDto.cs" />
+    <Compile Include="Dto\TermsAndConditionsDto.cs" />
+    <Compile Include="Dto\TrackedEntityDto.cs" />
+    <Compile Include="Dto\UserBusinessClaimDto.cs" />
+    <Compile Include="Dto\UserBusinessClaimHistoryDto.cs" />
+    <Compile Include="Dto\UserClaimEnum.cs" />
+    <Compile Include="Dto\TaskNotificationDto.cs" />
+    <Compile Include="Dto\UserTeamMemberDto.cs" />
+    <Compile Include="Dto\UserTeamDto.cs" />
+    <Compile Include="Dto\ValidationCodes.cs" />
+    <Compile Include="Dto\ValidationLevelEnumDto.cs" />
+    <Compile Include="Dto\ValidationViolationDto.cs" />
+    <Compile Include="OutboundDocumentMetadata.cs" />
+    <Compile Include="Service\FulfillmentDocumentMetaData.cs" />
+    <Compile Include="Dto\Integration\FulfillmentOrderProjectSearchRequest.cs" />
+    <Compile Include="Dto\Integration\FulfillmentOrderProjectSearchFilter.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProject.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectMessageIds.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectRefinerField.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectRefinerResult.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectRefinerResultSet.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectSearchCriteria.cs" />
+    <Compile Include="Dto\Integration\FulfillmentProjectSearchField.cs" />
+    <Compile Include="Dto\Integration\FulfillmentOrderProjectSearchResponse.cs" />
+    <Compile Include="Service\IBusinessUnitService.cs" />
+    <Compile Include="Service\ICertificationManagementService.cs" />
+    <Compile Include="Service\ICertificationRequestService.cs" />
+    <Compile Include="Service\IContactService.cs" />
+    <Compile Include="Service\ICustomerPartyService.cs" />
+    <Compile Include="Service\ICustomerService.cs" />
+    <Compile Include="Service\IDepartmentCodeService.cs" />
+    <Compile Include="Service\IDocumentContentService.cs" />
+    <Compile Include="Service\IDocumentManagementService.cs" />
+    <Compile Include="Service\IDocumentService.cs" />
+    <Compile Include="Service\IDocumentTemplateService.cs" />
+    <Compile Include="Service\IExternalDocumentService.cs" />
+    <Compile Include="Service\ILocationCodeService.cs" />
+    <Compile Include="Service\ILookupService.cs" />
+    <Compile Include="Service\IHistoryService.cs" />
+    <Compile Include="Service\IOutboundDocumentService.cs" />
+    <Compile Include="Service\IReadOnlyProjectService.cs" />
+    <Compile Include="Service\IRelayDocumentService.cs" />
+    <Compile Include="Service\IRelayProjectService.cs" />
+    <Compile Include="Service\IServiceCodeService.cs" />
+    <Compile Include="Service\INotificationService.cs" />
+    <Compile Include="Service\IOrderServiceLineDetailService.cs" />
+    <Compile Include="Service\IContentService.cs" />
+    <Compile Include="Service\IProductFamilyFeatureValueService.cs" />
+    <Compile Include="Service\IRelayProductService.cs" />
+    <Compile Include="Service\IIndustryCodeService .cs" />
+    <Compile Include="Service\ISimpleProfileService.cs" />
+    <Compile Include="Service\ITaskCategoryService.cs" />
+    <Compile Include="Service\ITaskTypeAvailableBehaviorService.cs" />
+    <Compile Include="Service\ITaskTypeService.cs" />
+    <Compile Include="Service\IUnitOfMeasureService.cs" />
+    <Compile Include="Service\ICategoryService.cs" />
+    <Compile Include="Service\IMessageService.cs" />
+    <Compile Include="Service\IProjectTemplateService.cs" />
+    <Compile Include="Service\IAriaContentService.cs" />
+    <Compile Include="Service\IReadOnlyProductService.cs" />
+    <Compile Include="Service\ITaskService.cs" />
+    <Compile Include="Service\IContainerService.cs" />
+    <Compile Include="Service\IOrderService.cs" />
+    <Compile Include="Service\IEmailService.cs" />
+    <Compile Include="Service\IIncomingOrderService.cs" />
+    <Compile Include="Service\IProductFamilyAttributeService.cs" />
+    <Compile Include="Service\IOrderMessageService.cs" />
+    <Compile Include="IResourceResultSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\AddDocumentDto.cs" />
+    <Compile Include="Dto\DocumentMetaDataDto.cs" />
+    <Compile Include="Service\IAriaService.cs" />
+    <Compile Include="Service\IProductFamilyFeatureService.cs" />
+    <Compile Include="Service\IProductFamilyService.cs" />
+    <Compile Include="Service\IProductService.cs" />
+    <Compile Include="Service\IProjectService.cs" />
+    <Compile Include="Service\IResourceService.cs" />
+    <Compile Include="Service\ICompanyService.cs" />
+    <Compile Include="Service\IProfileService.cs" />
+    <Compile Include="Service\IScratchSpaceService.cs" />
+    <Compile Include="Service\ITermsAndConditionsService.cs" />
+    <Compile Include="Service\IUserBusinessClaimService.cs" />
+    <Compile Include="Dto\ProjectTemplateDto.cs" />
+    <Compile Include="Dto\ProjectCreationRequestDto.cs" />
+    <Compile Include="Dto\ScratchFileDescriptorDto.cs" />
+    <Compile Include="Service\ILinkService.cs" />
+    <Compile Include="Service\IUserTeamService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SolutionItems\UL.Aria.snk">
+      <Link>UL.Aria.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

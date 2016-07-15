@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.ProductProcessing.Host</name>
+    </assembly>
+    <members>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.Program.Main(System.String[])">
+            <summary>
+                The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller">
+            <summary>
+            Installer for <see cref="N:UL.Aria.Service.ProductProcessing.Host"/>.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller"/> class.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.Departments">
+            <summary>
+            Gets or sets the departments.
+            </summary>
+            <value>
+            The departments.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.MimeTypes">
+            <summary>
+            Gets or sets the MIME types.
+            </summary>
+            <value>
+            The MIME types.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.OrderServiceXsltFolder">
+            <summary>
+                Gets the order service XSLT folder.
+            </summary>
+            <value>The order service XSLT folder.</value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.UploaderContentFolder">
+            <summary>
+                The app-relative path to the folder that temporary uploaded files are stored in.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.EnableUploadUiLogging">
+            <summary>
+                Gets a value indicating whether to show debug logging in the upload UI dialog.
+            </summary>
+            <value>
+                <c>true</c> if upload UI logging is enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.ServiceRootUri">
+            <summary>
+                Gets the host name of the middle tier REST service
+            </summary>
+            <value>
+                The name of the service host.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.UlEmployeeRoleClaimValue">
+            <summary>
+                Gets the value of the role claim expected to identify the identity as a UL Employee.  Should be 'UL-Employee'
+            </summary>
+            <value>
+                The ul employee role claim value.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.UlCompanyId">
+            <summary>
+                Gets the ID for the UL Company.  This is where some new users will added to.
+            </summary>
+            <value>
+                The ul company id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.DocumentTypes">
+            <summary>
+                Gets list of document types
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.Industries">
+            <summary>
+                Gets the industries.
+            </summary>
+            <value>
+                The industries.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.TaskPhase">
+            <summary>
+                Gets the task phase.
+            </summary>
+            <value>
+                The task phase.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.TaskProgress">
+            <summary>
+                Gets the task progress.
+            </summary>
+            <value>
+                The task progress.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.TaskPercentComplete">
+            <summary>
+                Gets the task percent complete.
+            </summary>
+            <value>
+                The task percent complete.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.TaskReviewGroupEmail">
+            <summary>
+                Gets the task review group email.
+            </summary>
+            <value>
+                The task review group email.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.UlApps">
+            <summary>
+                Gets the list of UL apps.
+            </summary>
+            <value>
+                The ul apps.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.MaxFavoritesToShow">
+            <summary>
+                Gets the max favorites to show.
+            </summary>
+            <value>
+                The max favorites to show.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.WebAnalyticsTrackingId">
+            <summary>
+                Gets or sets the google analytics 'tracking id'.
+            </summary>
+            <value>
+                The web analytics tracking id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.WebAnalyticsConfig">
+            <summary>
+                Gets or sets the google analytics config argument.
+            </summary>
+            <value>
+                The web analytics config.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.WebAnalyticsEnabled">
+            <summary>
+                Gets or sets a value indicating whether [web analytics turn on].
+            </summary>
+            <value>
+                <c>true</c> if [web analytics turn on]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.ShouldOverrideStsSessionTime">
+            <summary>
+            Gets a value indicating whether to override the session duration the STS provides
+            with a duration based on our local configuration.
+            </summary>
+            <value>
+            <c>true</c> if [override STS session time]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.Labware">
+            <summary>
+            Gets the labware.
+            </summary>
+            <value>
+            The labware.
+            </value>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.Dap">
+            <summary>
+            Gets the Dap.
+            </summary>
+            <value>
+            The Dap.
+            </value>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.ManageLabwareProject">
+            <summary>
+            Gets the Clp.
+            </summary>
+            <value>
+            The Clp.
+            </value>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.Eap">
+            <summary>
+            Gets the Eap.
+            </summary>
+            <value>
+            The Eap.
+            </value>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.EnableDocumentCaching">
+            <summary>
+            Gets or sets a value indicating whether [enable document caching].
+            </summary>
+            <value>
+            <c>true</c> if [enable document caching]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.DocumentContentServiceProxy">
+            <summary>
+            Gets the document content service proxy.
+            </summary>
+            <value>The document content service proxy.</value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.SharePointDocumentEditUrl">
+            <summary>
+            Gets or sets the sharePoint document edit URL.
+            </summary>
+            <value>
+            The sharePoint document edit URL.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.EnableDocumentOnlineEdit">
+            <summary>
+            Gets or sets a value indicating whether [enable document online edit].
+            </summary>
+            <value>
+            <c>true</c> if [enable document online edit]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.FreeformTaskTypeId">
+            <summary>
+            Gets or sets the freeform task type identifier.
+            </summary>
+            <value>
+            The freeform task type identifier.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.CanPreviewDocumentOnline">
+            <summary>
+            Gets or sets a value indicating whether this instance can preview document online.
+            </summary>
+            <value>
+            <c>true</c> if this instance can preview document online; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.SharePointDocumentPreviewUrl">
+            <summary>
+            Gets or sets the share point document preview URL.
+            </summary>
+            <value>
+            The share point document preview URL.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.ServiceConfiguration.EnableRedisTempDataSupport">
+            <summary>
+            Gets or sets a value indicating whether [enable redis temporary data support].
+            </summary>
+            <value><c>true</c> if [enable redis temporary data support]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.ProductProcessing.Host.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.ProductProcessing.Host.UnityInstanceProvider.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:UL.Aria.Service.ProductProcessing.Host.UnityInstanceProvider.Container">
+            <summary>
+            Gets the container.
+            </summary>
+            <value>
+            The container.
+            </value>
+        </member>
+    </members>
+</doc>

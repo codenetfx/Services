@@ -1,0 +1,30 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.View.TaskEmail
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Task Assignment";
+}
+
+<p>Hello @Model.RecipientName,</p>
+<p>
+	@Model.ActorName has deleted the following task which was assigned to you.
+</p>
+<p>
+	<strong>Project</strong><br/>
+	@Model.ProjectName
+</p>
+<p>
+	<strong>Task</strong><br/>
+	@Model.TaskName
+</p>
+<p>
+	<strong>Due Date</strong><br/>
+	@Model.EndDate
+</p>
+<p>
+	If you feel this change has been made in error, please contact <a href="mailto:@Model.ActorLoginId">@Model.ActorName</a>.
+</p>
+<p>
+	Thank You,<br />
+	UL Customer Support
+</p>

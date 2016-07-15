@@ -1,0 +1,89 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.View.TaskCompletedEmail
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Task Completed";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+    var editLink = string.Format("{0}Project/{1}/Task?action=%23edit_{2}", config.AriaRootUri, Model.ProjectId.ToString("N"), Model.TaskId.ToString("N"));
+}
+<table style="width:100%">
+    <tr style="height:34px;">
+        <td style="width:34px"><img alt="Task" src="cid:taskcompleted" /></td>
+        <td>
+            <table>
+                <tr><td><span style="padding:3px">@Model.TaskName</span></td></tr>
+                <tr><td><img src="cid:taskcompletedlabel" alt="Completed" /></td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<div style="position:relative; width: 100%">
+    <span>
+        
+    </span>
+    <span style="height: 34px;display:inline;">
+        <div style="float:left; clear:right;"></div>
+        <div style="float:left; clear:right;"></div>
+    </span>
+</div>
+<p>Hello @Model.RecipientName,</p>
+
+<p>
+	@Model.ActorName has completed the following task:
+</p>
+
+<p>
+	<strong>Project Name</strong><br/>
+	@Model.ProjectName
+</p>
+
+<p>
+	<strong>Task Name</strong><br/>
+	@Model.TaskName
+</p>
+
+<table>
+    <tr>
+        <td style="width:270px">
+            <strong>Current Task Status</strong><br/>
+            @Model.TaskPhase
+        </td>
+        <td style="width:270px">
+            <strong>Current Task Progress</strong><br />
+            @Model.TaskProgress
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Task Start Date</strong><br/>
+            @Model.StartDate
+        </td>
+        <td>
+            <strong>Task Due Date</strong><br/>
+            @Model.DueDate
+        </td>
+    </tr>
+</table>
+
+
+<p>
+    <strong>Latest Comment Posted</strong><br />
+    @Model.LastPostedComment
+</p>
+
+<p>
+	&raquo; <a href="@editLink">See this task on the UL Portal</a>
+</p>
+
+<p>
+	Thank You,<br />
+	Portal Services (portalservices@ul.com)
+</p>

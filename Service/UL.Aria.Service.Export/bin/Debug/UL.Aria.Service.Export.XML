@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Export</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Export.Common.LogCategoryResolver">
+            <summary>
+            Class that implements the <see cref="T:UL.Enterprise.Foundation.Service.Logging.ILogCategoryResolver"/> for this assembly.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Common.LogCategoryResolver.GetCategory(System.Type)">
+            <summary>
+            Gets the category.
+            </summary>
+            <param name="entity">The entity to use to resolve the log entry category.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Common.UnityInstanceProvider">
+            <summary>
+                Manages unity instances for this application.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Common.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Export.Common.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Common.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Common.UnityInstanceProvider.Create">
+            <summary>
+                Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Common.UnityInstanceProvider.Dispose(System.Boolean)">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+                unmanaged resources.
+            </param>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Common.UnityInstanceProvider.Container">
+            <summary>
+                Gets the container.
+            </summary>
+            <value>
+                The container.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.ExportConfiguration">
+            <summary>
+                Implements configuration properties.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.IExportConfiguration">
+            <summary>
+                Defines configuration properties.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.IExportConfiguration.ProjectExportFile">
+            <summary>
+                Gets or sets the project export path.
+            </summary>
+            <value>
+                The project export path.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.IExportConfiguration.TaskExportFile">
+            <summary>
+                Gets or sets the task export path.
+            </summary>
+            <value>
+                The task export path.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.IExportConfiguration.StorageConnectionString">
+            <summary>
+            Gets or sets the storage connection string.
+            </summary>
+            <value>
+            The storage connection string.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.IExportConfiguration.StorageContainer">
+            <summary>
+            Gets or sets the storage container.
+            </summary>
+            <value>
+            The storage container.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.IExportConfiguration.ProjectExportStorageDirectory">
+            <summary>
+            Gets or sets the project storage directory.
+            </summary>
+            <value>
+            The storage directory.
+            </value>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ExportConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Export.Manager.ExportConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.ExportConfiguration.ProjectExportFile">
+            <summary>
+            Gets or sets the project export path.
+            </summary>
+            <value>
+            The project export path.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.ExportConfiguration.TaskExportFile">
+            <summary>
+                Gets or sets the task export path.
+            </summary>
+            <value>
+                The task export path.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.ExportConfiguration.StorageConnectionString">
+            <summary>
+            Gets or sets the storage connection string.
+            </summary>
+            <value>
+            The storage connection string.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.ExportConfiguration.StorageContainer">
+            <summary>
+            Gets or sets the storage container.
+            </summary>
+            <value>
+            The storage container.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Export.Manager.ExportConfiguration.ProjectExportStorageDirectory">
+            <summary>
+            Gets or sets the storage directory for projects.
+            </summary>
+            <value>
+            The storage directory.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.BlobFileStorageManager">
+            <summary>
+                Implements operations for storing files.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.IFileStorageManager">
+            <summary>
+            Defines operations for storing files.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IFileStorageManager.Save(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IFileStorageManager.Get(System.String,System.String)">
+            <summary>
+            Gets the specified stream.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IFileStorageManager.Remove(System.String,System.String)">
+            <summary>
+            Removes the specified file.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.BlobFileStorageManager.#ctor(UL.Aria.Service.Export.Manager.IExportConfiguration)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Export.Manager.BlobFileStorageManager"/> class.
+            </summary>
+            <param name="exportConfiguration">The export configuration.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.BlobFileStorageManager.Save(System.String,System.String,System.IO.Stream)">
+            <summary>
+                Puts the specified stream.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.BlobFileStorageManager.Get(System.String,System.String)">
+            <summary>
+                Gets the specified stream.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.BlobFileStorageManager.Remove(System.String,System.String)">
+            <summary> 
+                Removes the specified file.
+            </summary>
+            <param name="path"></param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.IProjectExportDocumentManager">
+            <summary>
+            Defines operations for exporting <see cref="T:UL.Aria.Service.Domain.Entity.Project"/>s to a file stream.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IProjectExportDocumentManager.ExportProjects(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.Dictionary{System.Guid,UL.Aria.Service.Domain.Entity.Company},System.Func{System.Guid,UL.Aria.Service.Domain.Entity.Project})">
+            <summary>
+            Exports <see cref="T:UL.Aria.Service.Domain.Entity.Project"/>s to the supplied stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="projectIds"></param>
+            <param name="companies">The companies.</param>
+            <param name="projectLookupFunc">The project lookup function.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IProjectExportDocumentManager.CreateProjectHeader(System.IO.Stream)">
+            <summary>
+            Creates the header in the export document for the project.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IProjectExportDocumentManager.ExportProjectTasks(System.IO.Stream,UL.Aria.Service.Domain.Entity.ProjectDetail)">
+            <summary>
+            Exports <see cref="T:UL.Aria.Service.Domain.Entity.Task"/>s to the supplied stream.
+            </summary>
+            <param name="stream"></param>
+            <param name="projectDetail"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IProjectExportDocumentManager.CreateTaskHeader(System.IO.Stream)">
+            <summary>
+            Creates the headers in the export document for the tasks.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.IProjectExportManager">
+            <summary>
+            Defines operations for exporting <see cref="T:UL.Aria.Service.Domain.Entity.Project"/> entities. fs
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.IProjectExportManager.ExportProjects">
+            <summary>
+            Exports the projects.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.ProjectExportDocumentManager">
+            <summary>
+                Implement operations for exporting <see cref="T:UL.Aria.Service.Domain.Entity.Project"/>s to a file stream.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportDocumentManager.ExportProjects(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.Dictionary{System.Guid,UL.Aria.Service.Domain.Entity.Company},System.Func{System.Guid,UL.Aria.Service.Domain.Entity.Project})">
+            <summary>
+                Exports <see cref="T:UL.Aria.Service.Domain.Entity.Project"/>s to the supplied stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="projectIds"></param>
+            <param name="companies">The companies.</param>
+            <param name="projectLookupFunc">The project lookup function.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportDocumentManager.CreateProjectHeader(System.IO.Stream)">
+            <summary>
+                Creates the header in the export document for the project.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportDocumentManager.ExportProjectTasks(System.IO.Stream,UL.Aria.Service.Domain.Entity.ProjectDetail)">
+            <summary>
+                Exports <see cref="T:UL.Aria.Service.Domain.Entity.Task"/>s to the supplied stream.
+            </summary>
+            <param name="stream"></param>
+            <param name="projectDetail"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportDocumentManager.CreateTaskHeader(System.IO.Stream)">
+            <summary>
+                Creates the headers in the export document for the tasks.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Manager.ProjectExportManager">
+            <summary>
+                Implements operations for exporting <see cref="T:UL.Aria.Service.Domain.Entity.Project"/> entities.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportManager.#ctor(UL.Aria.Service.Export.Manager.IExportConfiguration,UL.Aria.Service.Manager.IProjectManager,UL.Aria.Service.Manager.ICompanyManager,UL.Aria.Service.Export.Manager.IProjectExportDocumentManager,UL.Aria.Service.Export.Manager.IFileStorageManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Export.Manager.ProjectExportManager"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="projectManager">The projectManager.</param>
+            <param name="companyManager">The CompanyManager</param>
+            <param name="projectExportDocumentManager"></param>
+            <param name="fileStorageManager">The file storage projectManager.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Export.Manager.ProjectExportManager.ExportProjects">
+            <summary>
+                Exports the projects.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Export.Program">
+            <summary>
+            Main for Export exe.
+            </summary>
+        </member>
+    </members>
+</doc>

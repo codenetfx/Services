@@ -1,0 +1,15 @@
+﻿@using UL.Aria.Service.Configuration
+@model  UL.Aria.Service.Domain.Entity.ProfileBo
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Account Access Granted";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	string _absoluteUrlBase = config.AriaRootUri.ToString();
+}
+
+<p>Hello @Model.DisplayName,</p>
+<p>You have been granted access to the UL Customer Portal. Please <a href="@_absoluteUrlBase">login</a> using the credentials that were sent to you when your account was created.</p>
+<p>
+	Best Regards,<br/>
+	The UL Customer Portal Team
+</p>

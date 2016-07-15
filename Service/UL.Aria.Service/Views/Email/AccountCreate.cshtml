@@ -1,0 +1,17 @@
+﻿@using UL.Aria.Service.Configuration
+@model  UL.Aria.Service.Domain.Entity.ProfileBo
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Account Created";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	string _absoluteUrlBase = config.AriaRootUri.ToString();
+}
+
+<p>Hello @Model.DisplayName,</p>
+<p>An account has been created on the UL Customer Portal using the following credentials: </p>
+<p>Email address: @Model.LoginId</p>
+<p><a href="@_absoluteUrlBase">Login Now</a> </p>
+<p>
+	Best Regards,<br/>
+	The UL Customer Portal Team
+</p>

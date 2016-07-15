@@ -1,0 +1,31 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.View.ProjectCompletedEmail
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Project Completed";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	var projectDetails = string.Format("{0}Project/Index/{1}", config.AriaRootUri, Model.ProjectId.ToString("N"));
+}
+
+<p>Hello @Model.RecipientName,</p>
+<p>
+	@Model.ActorName has completed the following project:
+</p>
+<p>
+	<strong>Project</strong><br/>
+	ARIA - @Model.ProjectName
+</p>
+<p>
+    <strong>Estimated Completion Date</strong><br/>
+    @(Model.DueDate.HasValue ? Model.DueDate.Value.ToLongDateString() : "Not Assigned")
+</p>
+<p>
+	&raquo; <a href="@projectDetails">See this project on the UL Portal</a>
+</p>
+<p>
+	If you feel this project has been assigned to you in error, please contact <a href="mailto:@Model.ActorLoginId">@Model.ActorName</a>.
+</p>
+<p>
+	Thank You,<br />
+	portalservices@ul.com
+</p>

@@ -1,0 +1,10 @@
+﻿@using UL.Aria.Service.Configuration
+@model  UL.Aria.Service.Domain.Entity.ProfileBo
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "UL Customer Portal Access Request";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	string _absoluteUrlBase = config.AriaRootUri.ToString();
+}
+
+<p>User @Model.LoginId has requested access to the UL Customer Portal.</p>

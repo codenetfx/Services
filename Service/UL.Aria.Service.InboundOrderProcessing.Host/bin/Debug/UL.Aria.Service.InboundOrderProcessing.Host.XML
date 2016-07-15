@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.InboundOrderProcessing.Host</name>
+    </assembly>
+    <members>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.Program.Main(System.String[])">
+            <summary>
+                The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller">
+            <summary>
+            Installer for host components.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller"/> class.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider">
+            <summary>
+                Basic Instance Manager that uses Unity for dependency injection.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider.Create">
+            <summary>
+                Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Host.UnityInstanceProvider.Container">
+            <summary>
+                Gets the container.
+            </summary>
+            <value>
+                The container.
+            </value>
+        </member>
+    </members>
+</doc>

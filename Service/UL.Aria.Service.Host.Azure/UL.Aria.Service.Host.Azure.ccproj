@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>2.7</ProductVersion>
+    <ProjectGuid>4563f949-6ba5-4428-8cf9-3bae7fec71a5</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UL.Aria.Service.Host.Azure</RootNamespace>
+    <AssemblyName>UL.Aria.Service.Host.Azure</AssemblyName>
+    <StartDevelopmentStorage>True</StartDevelopmentStorage>
+    <Name>UL.Aria.Service.Host.Azure</Name>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- Items for the project -->
+  <ItemGroup>
+    <ServiceConfiguration Include="ServiceConfiguration.DevInt.D18.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Production.PD16.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.ProductionUAT.PD15.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Production.PD15.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.ProductionUAT.PD16.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.ProductionUAT.STG8.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Training.tg4.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Training.MA1.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.UAT.UAT12.cscfg" />
+    <ServiceDefinition Include="ServiceDefinition.csdef" />
+    <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Web\UL.Aria.Web.Portal\UL.Aria.Web.Portal.csproj">
+      <Name>UL.Aria.Web.Portal</Name>
+      <Project>{6d4a4672-07a9-41c6-b7dc-67fe31dd58d1}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>UL.Aria.Web.Portal</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="..\UL.Aria.Service.ContactProcessor.WebJob\UL.Aria.Service.ContactProcessor.WebJob.csproj">
+      <Name>UL.Aria.Service.ContactProcessor.WebJob</Name>
+      <Project>{e8a70346-30e5-4708-8f7c-9a559decb10d}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>UL.Aria.Service.ContactProcessor.WebJob</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="..\UL.Aria.Service.Host\UL.Aria.Service.Host.csproj">
+      <Name>UL.Aria.Service.Host</Name>
+      <Project>{8873edb1-6695-4456-aa95-f51a4bc401b5}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>UL.Aria.Service.Host</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="..\UL.Aria.Service.InboundMessageProcessor.WebJob\UL.Aria.Service.InboundMessageProcessor.WebJob.csproj">
+      <Name>UL.Aria.Service.InboundMessageProcessor.WebJob</Name>
+      <Project>{1823ffc1-9de0-4eea-833a-ad94e21706f3}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>UL.Aria.Service.InboundMessageProcessor.WebJob</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Profiles" />
+    <Folder Include="UL.Aria.Service.ContactProcessor.WebJobContent\" />
+    <Folder Include="UL.Aria.Service.HostContent\" />
+    <Folder Include="UL.Aria.Service.InboundDocumentProcessor.WebJobContent\" />
+    <Folder Include="UL.Aria.Service.InboundMessageProcessor.WebJobContent\" />
+    <Folder Include="UL.Aria.Web.PortalContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="UL.Aria.Service.ContactProcessor.WebJobContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="UL.Aria.Service.HostContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="UL.Aria.Service.InboundDocumentProcessor.WebJobContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="UL.Aria.Service.InboundMessageProcessor.WebJobContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="UL.Aria.Web.PortalContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\AriaService2Production.azurePubxml" />
+    <PublishProfile Include="Profiles\d10Service.azurePubxml" />
+  </ItemGroup>
+  <!-- Import the target files for this project template -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.7\</CloudExtensionsDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug_NoFxCop' ">
+    <OutputPath>bin\Debug_NoFxCop\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(CloudExtensionsDir)Microsoft.WindowsAzure.targets" />
+</Project>

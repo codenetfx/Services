@@ -1,0 +1,697 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Update</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Update.Configuration.FileLocator">
+            <summary>
+            Provides a implemetation class to get a filename from the config file using the "FileLogger_LogFileName"
+            setting name.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.FileLocator.#ctor(UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Configuration.FileLocator"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.FileLocator.Filename">
+            <summary>
+            Gets the filename.
+            </summary>
+            <value>
+            The filename.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Factory.IUpdateManagerFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Factory.IUpdateManagerFactory.GetManager(UL.Aria.Service.Contracts.Dto.EntityTypeEnumDto)">
+            <summary>
+            Gets the manager.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Factory.UpdateManagerFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Factory.UpdateManagerFactory.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Factory.UpdateManagerFactory"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Factory.UpdateManagerFactory.GetManager(UL.Aria.Service.Contracts.Dto.EntityTypeEnumDto)">
+            <summary>
+            Gets the manager.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource">
+            <summary>
+            Provides an interface for the Update console application configuation.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.UpdateWithRuntimeArguments(System.String[])">
+            <summary>
+            Updates the with runtime arguments.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.CheckHelpRequested">
+            <summary>
+            Checks if help was requested, then displays the help info via Console.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.MaxConcurrentThreads">
+            <summary>
+            Gets the maximum concurrent threads.
+            </summary>
+            <value>
+            The maximum concurrent threads.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.LogFilename">
+            <summary>
+            Gets the log filename.
+            </summary>
+            <value>
+            The log filename.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.NumberOfReRuns">
+            <summary>
+            Gets the number of re runs.
+            </summary>
+            <value>
+            The number of re runs.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.ItemLimit">
+            <summary>
+            Gets the item limit.
+            </summary>
+            <value>
+            The item limit.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.ItemLimitIncrement">
+            <summary>
+            Gets the item limit increment.
+            </summary>
+            <value>
+            The item limit increment.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource.EntityType">
+            <summary>
+            Gets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.IUpdateManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.IUpdateManager.RunUpdate(System.Threading.CancellationToken,System.Action{UL.Aria.Service.Update.Results.ProgressInfo},System.Collections.Generic.List{System.Double},System.Nullable{System.Int32})">
+            <summary>
+            Runs the update process.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="progressAction">The progress action.</param>
+            <param name="transactionTimes">The transaction times.</param>
+            <param name="itemLimit">The item limit.</param>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.IUpdateManager.Status">
+            <summary>
+            Gets a value indicating the Managers process status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.IUpdateManager.StatusMessage">
+            <summary>
+            Gets the status message.
+            </summary>
+            <value>
+            The status message.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.IUpdateManager.ConfigSource">
+            <summary>
+            Gets the configuration source.
+            </summary>
+            <value>
+            The configuration source.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.IncomingOrderUpdateManager">
+            <summary>
+            Provides delegates that update Orders.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.UpdateManagerBase">
+            <summary>
+            Provides the base implmenation for UpdateManager classes.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.#ctor(UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager"/> class.
+            </summary>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.RunUpdate(System.Threading.CancellationToken,System.Action{UL.Aria.Service.Update.Results.ProgressInfo},System.Collections.Generic.List{System.Double},System.Nullable{System.Int32})">
+            <summary>
+            Runs the update process.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="progressAction"></param>
+            <param name="transactionTimes"></param>
+            <param name="itemLimit"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.LogResult(UL.Aria.Service.Update.Results.TaskExecutionResult)">
+            <summary>
+            Logs the result.
+            </summary>
+            <param name="taskExecutionResult">The task execution result.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.ResolveIncompleteItems">
+            <summary>
+            When implemented in a derived class it resolves a list of items that were not completed
+            during a previous execution of the process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.UpdateManagerBase.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.UpdateManagerBase.FileLogger">
+            <summary>
+            Gets a reference to the file logger.
+            </summary>
+            <value>
+            The file logger.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.UpdateManagerBase.ConfigSource">
+            <summary>
+            Gets a reference to the configuration source.
+            </summary>
+            <value>
+            The configuration source.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.UpdateManagerBase.Status">
+            <summary>
+            Gets a value indicating the Managers process status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Managers.UpdateManagerBase.StatusMessage">
+            <summary>
+            Gets the status message.
+            </summary>
+            <value>
+            The status message.
+            </value>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.IncomingOrderUpdateManager.#ctor(UL.Aria.Service.Provider.IIncomingOrderProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource,UL.Enterprise.Foundation.Mapper.IMapperRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager"/> class.
+            </summary>
+            <param name="incomingOrderProvider">The incoming order provider.</param>
+            <param name="parserResolver">The parser resolver.</param>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.IncomingOrderUpdateManager.GetFileLogMappingFunction">
+            <summary>
+            Gets the file log mapping function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.IncomingOrderUpdateManager.ResolveIncompleteItems">
+            <summary>
+            When implemented in a derived class it resolves a list of items that were not completed
+            during a previous execution of the process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.IncomingOrderUpdateManager.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.OrderUpdateManager">
+            <summary>
+            Provides a process to update Order search metadata.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.OrderUpdateManager.#ctor(UL.Aria.Service.Provider.IOrderProvider,UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource,UL.Aria.Service.Provider.IAssetProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.OrderUpdateManager"/> class.
+            </summary>
+            <param name="orderProvider">The order provider.</param>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+            <param name="assetProvider">The asset provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.OrderUpdateManager.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.OrderUpdateManager.ResolveIncompleteItems">
+            <summary>
+            When implemented in a derived class it resolves a list of items that were not completed
+            during a previous execution of the process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.OrderUpdateManager.GetFileLogMappingFunction">
+            <summary>
+            Gets the file log mapping function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.ProcessStatus">
+            <summary>
+            Provides a type to indicate the statis of a long runing process.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.Update.Managers.ProcessStatus.Processing">
+            <summary>
+            The processing
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.Update.Managers.ProcessStatus.Completed">
+            <summary>
+            The completed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.Update.Managers.ProcessStatus.Interupted">
+            <summary>
+            The interupted
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.Update.Managers.ProcessStatus.Cancelled">
+            <summary>
+            The cancelled
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.ProjectMetaOnlyUpdateManager">
+            <summary>
+            Provides an update manager for updating just the project's search meta info in bulk
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager">
+            <summary>
+            Provides an implemenation of the IUpdateManager for the Project Entity.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectUpdateManager.#ctor(UL.Aria.Service.Provider.IProjectProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource,UL.Enterprise.Foundation.Mapper.IMapperRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager"/> class.
+            </summary>
+            <param name="projectProvider">The project provider.</param>
+            <param name="parserResolver">The parser resolver.</param>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+            <param name="mapperRegistry"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectUpdateManager.GetFileLogMappingFunction">
+            <summary>
+            Gets the file log mapping function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectUpdateManager.ResolveIncompleteItems">
+            <summary>
+            When implemented in a derived class it resolves a list of items that were not completed
+            during a previous execution of the process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectUpdateManager.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectMetaOnlyUpdateManager.#ctor(UL.Aria.Service.Provider.IProjectProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Aria.Service.Provider.IAssetProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager"/> class.
+            </summary>
+            <param name="projectProvider">The project provider.</param>
+            <param name="parserResolver">The parser resolver.</param>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="assetProvider">The asset provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.ProjectMetaOnlyUpdateManager.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Managers.TaskUpdateManager">
+            <summary>
+            Provides a Update manager class for updating Tasks in bulk
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.TaskUpdateManager.#ctor(UL.Aria.Service.Provider.IProjectProvider,UL.Aria.Service.Provider.ITaskProvider,UL.Aria.Service.Provider.IAssetProvider,UL.Enterprise.Foundation.Logging.IFileLogger,UL.Aria.Service.Update.Configuration.IUpdateConfigurationSource,UL.Enterprise.Foundation.Mapper.IMapperRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Managers.ProjectUpdateManager"/> class.
+            </summary>
+            <param name="projectProvider">The project provider.</param>
+            <param name="taskProvider">The project provider.</param>
+            <param name="assetProvider">The asset provider.</param>
+            <param name="fileLogger">The file logger.</param>
+            <param name="config">The configuration.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.TaskUpdateManager.GetFileLogMappingFunction">
+            <summary>
+            Gets the file log mapping function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.TaskUpdateManager.ResolveIncompleteItems">
+            <summary>
+            When implemented in a derived class it resolves a list of items that were not completed
+            during a previous execution of the process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Managers.TaskUpdateManager.GetItemProcessingFunction(UL.Aria.Service.Domain.Entity.Lookup)">
+            <summary>
+            When implemented in a derived class it gets the Item Processing function.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Program.Main(System.String[])">
+            <summary>
+            Mains the specified arguments.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Program.PerformanceMetric.SD">
+            <summary>
+            Gets or sets the sd.
+            </summary>
+            <value>
+            The sd.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Program.PerformanceMetric.Variance">
+            <summary>
+            Gets or sets the variance.
+            </summary>
+            <value>
+            The variance.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Program.PerformanceMetric.Average">
+            <summary>
+            Gets or sets the average.
+            </summary>
+            <value>
+            The average.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Program.PerformanceMetric.ElapsedTime">
+            <summary>
+            Gets or sets the elapsed time.
+            </summary>
+            <value>
+            The elapsed time.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Program.PerformanceMetric.totalProcessed">
+            <summary>
+            Gets or sets the total processed.
+            </summary>
+            <value>
+            The total processed.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Results.ProgressInfo">
+            <summary>
+            Provides a class to send progress informaiton for a long running process.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.ProgressInfo.CompletedItemId">
+            <summary>
+            Gets or sets the completed item identifier of the item that 
+            completed that trigger this progressInfo to be sent.
+            </summary>
+            <value>
+            The completed item identifier.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.ProgressInfo.TotalItems">
+            <summary>
+            Gets or sets the total items.
+            </summary>
+            <value>
+            The total items.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.ProgressInfo.ProcessedCount">
+            <summary>
+            Gets or sets the processed count.
+            </summary>
+            <value>
+            The processed count.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.ProgressInfo.PercentageComplete">
+            <summary>
+            Gets the percentage complete.
+            </summary>
+            <value>
+            The percentage complete.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Results.TaskExecutionResult">
+            <summary>
+            Provides a classifier for indicating the result of a task execution.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Results.TaskExecutionResult.#ctor(UL.Aria.Service.Domain.Entity.Lookup,System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Results.TaskExecutionResult"/> class.
+            </summary>
+            <param name="lookup">The lookup.</param>
+            <param name="successful">if set to <c>true</c> [successful].</param>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Results.TaskExecutionResult.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.TaskExecutionResult.Lookup">
+            <summary>
+            Gets the lookup.
+            </summary>
+            <value>
+            The lookup.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.TaskExecutionResult.ErrorMessage">
+            <summary>
+            Gets the error message.
+            </summary>
+            <value>
+            The error message.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Results.TaskExecutionResult.Successful">
+            <summary>
+            Gets a value indicating whether this <see cref="T:UL.Aria.Service.Update.Results.TaskExecutionResult"/> is successful.
+            </summary>
+            <value>
+              <c>true</c> if successful; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Configuration.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UnityInstanceProvider.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UnityInstanceProvider.Container">
+            <summary>
+            Gets the container.
+            </summary>
+            <value>
+            The container.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource">
+            <summary>
+            Provides an implemenatation for the IUpdateConfigurationSource interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource"/> class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.UpdateWithRuntimeArguments(System.String[])">
+            <summary>
+            Updates the with runtime arguments.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.CheckHelpRequested">
+            <summary>
+            Checks if help was requested, then displays the help info via Console.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.MaxConcurrentThreads">
+            <summary>
+            Gets an integer representing the maximum concurrent threads allow.
+            </summary>
+            <value>
+            The maximum concurrent threads.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.LogFilename">
+            <summary>
+            Gets the log filename.
+            </summary>
+            <value>
+            The log filename.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.EntityType">
+            <summary>
+            Gets the type of the entity that will be processed.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.NumberOfReRuns">
+            <summary>
+            Gets the number of re runs.
+            </summary>
+            <value>
+            The number of re runs.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.ItemLimit">
+            <summary>
+            Gets or sets the item limit.
+            </summary>
+            <value>
+            The item limit.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.ItemLimitIncrement">
+            <summary>
+            Gets or sets the item limit increment.
+            </summary>
+            <value>
+            The item limit increment.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments">
+            <summary>
+            Provides a class for command line argument parsing specfic to the update application.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments.#ctor(System.Collections.Generic.List{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments"/> class.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments.ResolveArg(System.Collections.Generic.List{System.String},System.Predicate{System.String})">
+            <summary>
+            Resolves the argument.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="lamda">The lamda.</param>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments.MaxThreads">
+            <summary>
+            Gets the maximum threads.
+            </summary>
+            <value>
+            The maximum threads.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments.EntityType">
+            <summary>
+            Gets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Update.Configuration.UpdateConfigurationSource.Arguments.LogFile">
+            <summary>
+            Gets or sets the filename log file.
+            </summary>
+            <value>
+            The log file.
+            </value>
+        </member>
+    </members>
+</doc>

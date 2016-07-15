@@ -1,0 +1,38 @@
+﻿@using System
+@using System.Web
+@model UL.Aria.Service.Domain.View.ContactUs
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Contact Us";
+}
+@helper TranslateToHtml(string text) {
+	@(new HtmlString(HttpUtility.HtmlEncode(text).Replace(Environment.NewLine, "<BR />")))
+}
+
+<p>
+	An email has been sent to Customer Support. Below is a copy of the email for your records.
+</p>
+<p>
+	<strong>Sender:</strong><br/>
+	@Model.ContactEmail
+</p>
+<p>
+	<strong>Industry:</strong><br/>
+	@Model.IndustryName
+</p>
+<p>
+	<strong>Subject:</strong><br/>
+	@Model.Subject
+</p>
+<p>
+	<strong>Message:</strong><br/>
+	@Model.Message
+</p>
+<p>
+	<strong>Send a Copy to:</strong><br/>
+	@Model.ContactCopyEmail
+</p>
+<p>
+	Thank You,<br />
+	UL Customer Support
+</p>

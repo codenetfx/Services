@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Underwriters Laboratories Inc.</LicensedTo>
+    <LicenseType>Site OEM</LicenseType>
+    <LicenseNote>Limited to 10 developers</LicenseNote>
+    <OrderID>121205110616</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Total</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>0ffee731-0183-4b91-8ec4-68ea3a55a64f</SerialNumber>
+    <SubscriptionExpiry>20131205</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>T5KFGH+byodRpOMouQFDZF5EXYmUjEg2de+qV/rW/GWGOAYBEc6POiS8De1mYp0GJ/8QXrVBch31dH1ENh0SEeZfQaxcp6IZINtjnbnkUzHVU+ZT/qxJ+bF+QHe9NVO3SSTcDwisey7qoz705Q1P/74NQ65pXpCSOCq9yEMBiCg=</Signature>
+</License>

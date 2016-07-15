@@ -1,0 +1,806 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Claim</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Claim.Contract.ClaimDefinitionDto">
+            <summary>
+            Claim definition data transfer class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.ClaimDefinitionDto.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.ClaimDefinitionDto.ClaimDomainValues">
+            <summary>
+            Gets or sets the domain values.
+            </summary>
+            <value>
+            The domain values.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Contract.IClaimDefinitionService">
+            <summary>
+            Claim service interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IClaimDefinitionService.DefineClaim(UL.Aria.Service.Claim.Contract.ClaimDefinitionDto)">
+            <summary>
+            Defines the claim.
+            </summary>
+            <param name="claimDefinitionDto">The claim definition.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IClaimDefinitionService.RemoveClaim(System.String)">
+            <summary>
+            Removes the claim.
+            </summary>
+            <param name="claimDefinitionId">The claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IClaimDefinitionService.GetAll">
+            <summary>
+            Gets all.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Contract.IUserClaimService">
+            <summary>
+            User claim service interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.Add(UL.Aria.Service.Claim.Contract.UserClaimDto)">
+            <summary>
+            Adds a user role..
+            </summary>
+            <param name="userClaimDto">The user role dto.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.Remove(System.String)">
+            <summary>
+            Removes the specified user claim.
+            </summary>
+            <param name="userClaimId">The user claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.GetUserClaimValues(System.String,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.GetUserClaimsByValue(System.String)">
+            <summary>
+            Finds the claims.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.GetUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.GetUserClaimHistory(System.String,System.String)">
+            <summary>
+            Gets the user claim history.
+            </summary>
+            <param name="claimId">The encode to64.</param>
+            <param name="loginId">The login id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.GetUserClaims(System.String)">
+            <summary>
+            Gets all of the claim values for a user.
+            </summary>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Contract.IUserClaimService.RemoveUserClaims(System.String)">
+            <summary>
+            Removes claims for a user.
+            </summary>
+            <param name="loginId">The login unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Contract.UserClaimDto">
+            <summary>
+            User role DTO class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.UserClaimDto.Id">
+            <summary>
+            Gets or sets the user claim id.
+            </summary>
+            <value>
+            The user claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.UserClaimDto.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.UserClaimDto.LoginId">
+            <summary>
+            Gets or sets the login id.
+            </summary>
+            <value>
+            The login id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.UserClaimDto.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Contract.UserClaimDto.ClaimValue">
+            <summary>
+            Gets or sets the claim value.
+            </summary>
+            <value>
+            The claim value.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository">
+            <summary>
+                Claim definition repository
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Data.IClaimDefinitionRepository">
+            <summary>
+            Claim repository interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IClaimDefinitionRepository.FindByClaimId(System.Uri)">
+            <summary>
+            Finds the by claim id.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.FindAll">
+            <summary>
+                Finds all.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.FindByClaimId(System.Uri)">
+            <summary>
+                Finds the by claim id.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.FindById(System.Guid)">
+            <summary>
+                Finds the by id.
+            </summary>
+            <param name="entityId">The entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.Add(UL.Aria.Service.Claim.Domain.ClaimDefinition)">
+            <summary>
+                Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.Update(UL.Aria.Service.Claim.Domain.ClaimDefinition)">
+            <summary>
+                Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.ClaimDefinitionRepository.Remove(System.Guid)">
+            <summary>
+                Removes the specified entity id.
+            </summary>
+            <param name="entityId">The entity id.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Data.IUserClaimRepository">
+            <summary>
+            User claim repository interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.FindUserClaimValues(System.Uri,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.FindUserClaimValues(System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.FindUserClaimsByValue(System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.FindUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.FindUserClaimHistory(System.Uri,System.String)">
+            <summary>
+            Finds the user claim history.
+            </summary>
+            <param name="claimId">The expected claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.IUserClaimRepository.RemoveUserClaims(System.String)">
+            <summary>
+            Removes the user claims.
+            </summary>
+            <param name="loginId"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Data.UserClaimHistoryDto">
+            <summary>
+            User claim history data transfer class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Data.UserClaimHistoryDto.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Data.UserClaimHistoryDto.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Data.UserClaimHistoryDto.ChangedBy">
+            <summary>
+            Gets or sets the changed by.
+            </summary>
+            <value>
+            The changed by.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Data.UserClaimHistoryDto.ChangeDate">
+            <summary>
+            Gets or sets the change date.
+            </summary>
+            <value>
+            The change date.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Data.UserClaimRepository">
+            <summary>
+            User security repository class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Data.UserClaimRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindAll">
+            <summary>
+            Finds all.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindById(System.Guid)">
+            <summary>
+            Finds the by id.
+            </summary>
+            <param name="entityId">The entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.Add(UL.Aria.Service.Claim.Domain.UserClaim)">
+            <summary>
+            Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.Update(UL.Aria.Service.Claim.Domain.UserClaim)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.Remove(System.Guid)">
+            <summary>
+            Removes the specified entity id.
+            </summary>
+            <param name="entityId">The entity id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindUserClaimValues(System.Uri,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindUserClaimValues(System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindUserClaimsByValue(System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.FindUserClaimHistory(System.Uri,System.String)">
+            <summary>
+            Finds the user claim history.
+            </summary>
+            <param name="claimId">The expected claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Data.UserClaimRepository.RemoveUserClaims(System.String)">
+            <summary>
+            Removes the user claims.
+            </summary>
+            <param name="loginId"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Domain.ClaimDefinition">
+            <summary>
+            Claim definition class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.ClaimDefinition.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.ClaimDefinition.ClaimDomainValues">
+            <summary>
+            Gets or sets the claim domain values.
+            </summary>
+            <value>
+            The claim domain values.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Domain.ClaimDefinitionValidator">
+            <summary>
+            Claim definition validator.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Domain.ClaimDefinitionValidator.ValidateInstance(UL.Aria.Service.Claim.Domain.ClaimDefinition,System.Collections.Generic.List{System.String})">
+            <summary>
+            Validates the instance.
+            </summary>
+            <param name="entityToValidate">The entity to validate.</param>
+            <param name="errors">The errors.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Domain.UserClaim">
+            <summary>
+            User claim class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaim.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaim.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaim.ClaimValue">
+            <summary>
+            Gets or sets the claim value.
+            </summary>
+            <value>
+            The claim value.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaim.LoginId">
+            <summary>
+            Gets or sets the login id of the user.
+            </summary>
+            <value>
+            The login id.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Domain.UserClaimHistory">
+            <summary>
+            User claim history entity.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.ClaimId">
+            <summary>
+            Gets or sets the claim id.
+            </summary>
+            <value>
+            The claim id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.ChangedBy">
+            <summary>
+            Gets or sets the change by.
+            </summary>
+            <value>
+            The change by.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.ChangeDate">
+            <summary>
+            Gets or sets the change date.
+            </summary>
+            <value>
+            The change date.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Claim.Domain.UserClaimHistory.LoginId">
+            <summary>
+            Gets or sets the login id.
+            </summary>
+            <value>
+            The login id.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService">
+            <summary>
+            Claim definition service class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService.#ctor(UL.Aria.Service.Claim.Provider.IClaimDefinitionProvider,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Enterprise.Foundation.Data.ITransactionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService"/> class.
+            </summary>
+            <param name="claimDefinitionProvider">The claim provider.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="transactionFactory">The transaction factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService.DefineClaim(UL.Aria.Service.Claim.Contract.ClaimDefinitionDto)">
+            <summary>
+            Defines the claim.
+            </summary>
+            <param name="claimDefinitionDto">The claim definition dto.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService.RemoveClaim(System.String)">
+            <summary>
+            Removes the claim.
+            </summary>
+            <param name="claimDefinitionId">The claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.ClaimDefinitionService.GetAll">
+            <summary>
+            Gets all.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Implementation.UserClaimService">
+            <summary>
+            User claim service class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.#ctor(UL.Aria.Service.Claim.Provider.IUserClaimProvider,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Enterprise.Foundation.Data.ITransactionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Implementation.UserClaimService"/> class.
+            </summary>
+            <param name="userClaimProvider">The user claim manager.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="transactionFactory">The transaction factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.Add(UL.Aria.Service.Claim.Contract.UserClaimDto)">
+            <summary>
+            Adds a user role.
+            </summary>
+            <param name="userClaimDto">The user role dto.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.Remove(System.String)">
+            <summary>
+            Removes the specified user claim.
+            </summary>
+            <param name="userClaimId">The user claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.GetUserClaimValues(System.String,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id (base 64 encoded).</param>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.GetUserClaimsByValue(System.String)">
+            <summary>
+            Finds the claims.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.GetUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.GetUserClaims(System.String)">
+            <summary>
+            Gets all of the claim values for a user.
+            </summary>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.RemoveUserClaims(System.String)">
+            <summary>
+            Removes claims for a user.
+            </summary>
+            <param name="loginId">The login unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Implementation.UserClaimService.GetUserClaimHistory(System.String,System.String)">
+            <summary>
+            Gets the user claim history.
+            </summary>
+            <param name="claimId">The encode to64.</param>
+            <param name="loginId">The login id.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider">
+            <summary>
+            Claim provider class.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Provider.IClaimDefinitionProvider">
+            <summary>
+            Claim provider interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IClaimDefinitionProvider.Add(UL.Aria.Service.Claim.Domain.ClaimDefinition)">
+            <summary>
+            Defines the claim.
+            </summary>
+            <param name="claimDefinition"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IClaimDefinitionProvider.Remove(System.Guid)">
+            <summary>
+            Removes the specified claim id.
+            </summary>
+            <param name="claimDefinitionId">The claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IClaimDefinitionProvider.GetAll">
+            <summary>
+            Gets all the claim definitions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider.#ctor(UL.Aria.Service.Claim.Data.IClaimDefinitionRepository,UL.Enterprise.Foundation.Domain.IValidator{UL.Aria.Service.Claim.Domain.ClaimDefinition})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider"/> class.
+            </summary>
+            <param name="claimDefinitionRepository">The claim repository.</param>
+            <param name="validator">The validator.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider.Add(UL.Aria.Service.Claim.Domain.ClaimDefinition)">
+            <summary>
+            Defines the claim.
+            </summary>
+            <param name="claimDefinition"></param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider.Remove(System.Guid)">
+            <summary>
+            Removes the specified claim id.
+            </summary>
+            <param name="claimDefinitionId">The claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.ClaimDefinitionProvider.GetAll">
+            <summary>
+            Gets all the claim definitions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Provider.IUserClaimProvider">
+            <summary>
+            User claim provider class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.Add(UL.Aria.Service.Claim.Domain.UserClaim)">
+            <summary>
+            Adds the specified user claim.
+            </summary>
+            <param name="userClaim">The user claim.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.Remove(System.Guid)">
+            <summary>
+            Removes the specified user claim id.
+            </summary>
+            <param name="userClaimId">The user claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.GetUserClaimValues(System.Uri,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns>All the user claims values for a particular claim id and user.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.GetUserClaimsByValue(System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.GetUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.GetUserClaimHistory(System.Uri,System.String)">
+            <summary>
+            Gets the user claim history.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId">The login id.</param>
+            <returns>
+            All the user claims history for a particular claim id and user.
+            </returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.GetUserClaimValues(System.String)">
+            <summary>
+            Gets all the user claim values for a user.
+            </summary>
+            <param name="loginId"></param>
+            <returns>All the user claims values for a particular user.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.IUserClaimProvider.RemoveUserClaims(System.String)">
+            <summary>
+            Removes the user claims.
+            </summary>
+            <param name="loginId"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Claim.Provider.UserClaimProvider">
+            <summary>
+            User claim provider class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.#ctor(UL.Aria.Service.Claim.Data.IUserClaimRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Claim.Provider.UserClaimProvider"/> class.
+            </summary>
+            <param name="userClaimRepository">The user claim repository.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.Add(UL.Aria.Service.Claim.Domain.UserClaim)">
+            <summary>
+            Adds the specified user claim.
+            </summary>
+            <param name="userClaim">The user claim.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.Remove(System.Guid)">
+            <summary>
+            Removes the specified user claim id.
+            </summary>
+            <param name="userClaimId">The user claim id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.GetUserClaimValues(System.Uri,System.String)">
+            <summary>
+            Gets the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.GetUserClaimsByValue(System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.GetUserClaimsByIdAndValue(System.String,System.String)">
+            <summary>
+            Finds the user claim values.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="claimValue">The claim value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.GetUserClaimHistory(System.Uri,System.String)">
+            <summary>
+            Gets the user claim history.
+            </summary>
+            <param name="claimId">The claim id.</param>
+            <param name="loginId"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.GetUserClaimValues(System.String)">
+            <summary>
+            Gets all the user claim values for a user.
+            </summary>
+            <param name="loginId"></param>
+            <returns>
+            All the user claims values for a particular user.
+            </returns>
+        </member>
+        <member name="M:UL.Aria.Service.Claim.Provider.UserClaimProvider.RemoveUserClaims(System.String)">
+            <summary>
+            Removes the user claims.
+            </summary>
+            <param name="loginId"></param>
+        </member>
+    </members>
+</doc>

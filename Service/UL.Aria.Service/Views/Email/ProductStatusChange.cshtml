@@ -1,0 +1,24 @@
+﻿@using UL.Aria.Service.Configuration
+@model UL.Aria.Service.Domain.Entity.Product
+@{
+	Layout = "~/Email/_Layout.cshtml";
+	ViewBag.Title = "Product Status Changed";
+	var config = ViewBag.ServiceConfiguration as IServiceConfiguration;
+	var viewLink = string.Format("{0}Product/Details/{1}", config.AriaRootUri, Model.Id.Value.ToString("N"));
+}
+
+<p>
+	The status of product <a href="@viewLink">@Model.Id</a> has changed to <strong>@Model.Status</strong>.
+</p>
+<p>
+	<strong>Product Name</strong><br/>
+	@Model.Name
+</p>
+<p>
+	<strong>Product Description</strong><br/>
+	@Model.Description
+</p>
+@*<p>
+	Thank You,<br />
+	UL Customer Support
+</p>*@

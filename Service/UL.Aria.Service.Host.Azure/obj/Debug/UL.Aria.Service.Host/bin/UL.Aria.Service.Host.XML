@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Host</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Host.Common.LogCategoryResolver">
+            <summary>
+             Resolves a log category based on entity which is the focus of the log message being created.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Common.LogCategoryResolver.GetCategory(System.Type)">
+            <summary>
+            Gets the category.
+            </summary>
+            <param name="entity">The entity to use to resolve the log entry category.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Host.Global">
+            <summary>
+                Global application class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_Start(System.Object,System.EventArgs)">
+            <summary>
+                Handles the Start event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Session_Start(System.Object,System.EventArgs)">
+            <summary>
+                Handles the Start event of the Session control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+                Handles the BeginRequest event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_AuthenticateRequest(System.Object,System.EventArgs)">
+            <summary>
+                Handles the AuthenticateRequest event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_Error(System.Object,System.EventArgs)">
+            <summary>
+                Handles the Error event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Session_End(System.Object,System.EventArgs)">
+            <summary>
+                Handles the End event of the Session control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_LogRequest(System.Object,System.EventArgs)">
+            <summary>
+                Handles the LogRequest event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Global.Application_End(System.Object,System.EventArgs)">
+            <summary>
+                Handles the End event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Host.Common.WcfServiceFactory">
+            <summary>
+                WCF Service host factory class.
+            </summary>
+            <remark>
+                If .svc files are used, the same WCFServiceFactory instance should be shared via both contstruction paths (i.e.
+                global.ascx, .svc Factory attribute.
+            </remark>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Common.WcfServiceFactory.#ctor(Microsoft.Practices.Unity.UnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Host.Common.WcfServiceFactory"/> class.
+            </summary>
+            <param name="container">The unity container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Common.WcfServiceFactory.ConfigureContainer(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Configures the container.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Common.WcfServiceFactory.ConfigureHost(System.ServiceModel.ServiceHostBase)">
+            <summary>
+                Configures the host.
+            </summary>
+            <param name="serviceHost">The service host.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Host.Common.WcfServiceFactory.ConfigureHostTest(System.ServiceModel.ServiceHostBase)">
+            <summary>
+                Should not be used.  This is just so we can test the ConfigureHost method.
+            </summary>
+            <param name="serviceHost"></param>
+        </member>
+        <member name="T:UL.Aria.Service.Host.WebRole">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Host.WebRole.OnStart">
+            <summary>
+            Called when [start].
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

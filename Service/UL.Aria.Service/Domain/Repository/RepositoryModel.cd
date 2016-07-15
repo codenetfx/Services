@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="UL.Aria.Service.Domain.Repository.AssocationRepository&lt;E&gt;">
+    <Position X="1" Y="13.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Domain\Repository\AssocationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UL.Aria.Service.Domain.Repository.AssociatedPrimaryRepository&lt;E&gt;">
+    <Position X="7" Y="17" Width="5.75" />
+    <InheritanceLine Type="UL.Enterprise.Foundation.Data.RepositoryPrimaryAssocatedEntityBase&lt;E, RS, S, RI, SM&gt;" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="9.875" Y="15.819" />
+        <Point X="9.875" Y="16.085" />
+        <Point X="9.875" Y="16.085" />
+        <Point X="9.875" Y="17" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Domain\Repository\AssociatedPrimaryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UL.Aria.Service.Domain.Repository.AuditableEntity">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAIAAAAAAAAAAIAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\Repository\AuditableEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UL.Aria.Service.Domain.Repository.PrimaryRepository&lt;E&gt;">
+    <Position X="13.75" Y="14" Width="5.25" />
+    <InheritanceLine Type="UL.Enterprise.Foundation.Data.RepositoryPrimaryEntityBase&lt;E, RS, S, RI, SM&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="12.125" Y="10.887" />
+        <Point X="12.125" Y="13.328" />
+        <Point X="16.375" Y="13.328" />
+        <Point X="16.375" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Domain\Repository\PrimaryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UL.Enterprise.Foundation.Data.RepositoryAssociationBase&lt;E, RS, S, RI, SM&gt;">
+    <Position X="2.25" Y="8.5" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UL.Enterprise.Foundation.Data.RepositoryPrimaryAssocatedEntityBase&lt;E, RS, S, RI, SM&gt;">
+    <Position X="8.25" Y="13.75" Width="3.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UL.Enterprise.Foundation.Domain.DomainEntity">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UL.Enterprise.Foundation.Data.RepositoryPrimaryEntityBase&lt;E, RS, S, RI, SM&gt;">
+    <Position X="9.75" Y="8.5" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UL.Enterprise.Foundation.Data.TableRepositoryBase&lt;E&gt;">
+    <Position X="5.25" Y="0.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="UL.Aria.Service.Domain.Repository.IAuditableEntity">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <InheritanceLine Type="UL.Enterprise.Foundation.Data.IPrimaryAssocationEntity" FixedToPoint="true">
+      <Path>
+        <Point X="20.5" Y="6.506" />
+        <Point X="20.5" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAIAAAAAAAAAAIAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\Repository\IAuditableEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UL.Enterprise.Foundation.Data.IPrimaryAssocationEntity">
+    <Position X="19.75" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="UL.Enterprise.Foundation.Data.IEntity" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.75" Y="2.062" />
+        <Point X="20.75" Y="4.875" />
+        <Point X="20.75" Y="4.875" />
+        <Point X="20.75" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="UL.Enterprise.Foundation.Data.IPrimaryEntity" Collapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="UL.Enterprise.Foundation.Data.IAssocationEntity" Collapsed="true">
+    <Position X="18" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="UL.Enterprise.Foundation.Data.IEntity" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

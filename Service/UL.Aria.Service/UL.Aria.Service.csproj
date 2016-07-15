@@ -1,0 +1,1127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC852031-EBCE-47B1-B64D-1C95226A676E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UL.Aria.Service</RootNamespace>
+    <AssemblyName>UL.Aria.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\UL.Aria.Service.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\SolutionItems\UL.Aria.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_NoFxCop|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_NoFxCop\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\UL.Aria.Service.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\..\lib\aspose_net2.0\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EnterpriseLibrary.Logging.Database.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\..\..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WindowsAzure.ServiceBus.3.0.3\lib\net45-full\Microsoft.ServiceBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WindowsAzure.Storage.5.0.2\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\..\..\packages\RazorEngine.3.3.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName">
+      <HintPath>..\..\..\packages\StackExchange.Redis.StrongName.1.0.333\lib\net45\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="UL.Enterprise.Foundation">
+      <HintPath>..\..\..\Dependencies\UL.Enterprise.Foundation\UL.Enterprise.Foundation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\SolutionItems\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SolutionItems\TestAssemblyInfo.cs">
+      <Link>Properties\TestAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Auditing\AssetLinkAuditInterceptor.cs" />
+    <Compile Include="Auditing\AuditAttribute.cs" />
+    <Compile Include="Auditing\AuditConfigurationException.cs" />
+    <Compile Include="Auditing\AuditIgnoreAttribute.cs" />
+    <Compile Include="Auditing\AuditInterceptionBehaviorEntityBase.cs" />
+    <Compile Include="Auditing\DocumentAuditInterceptor.cs" />
+    <Compile Include="Auditing\DocumentManagerAuditInterceptor.cs" />
+    <Compile Include="Auditing\ProjectAuditInterceptor.cs" />
+    <Compile Include="Auditing\TaskAuditInterceptor.cs" />
+    <Compile Include="Caching\CacheBehaviorBase.cs" />
+    <Compile Include="Caching\CacheBehaviorFactory.cs" />
+    <Compile Include="Caching\Behaviors\CacheIndexIdByUniqueKey.cs" />
+    <Compile Include="Caching\Behaviors\CacheIncomingTargetByIdBehavior.cs" />
+    <Compile Include="Caching\CacheKeySupport.cs" />
+    <Compile Include="Caching\Behaviors\CacheReturnValueBehavior.cs" />
+    <Compile Include="Caching\Behaviors\CachePassthroughBehavior.cs" />
+    <Compile Include="Caching\CacheResourceAttribute.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheInterceptor.cs" />
+    <Compile Include="Caching\Behaviors\DeleteByKeysCachingBehavior.cs" />
+    <Compile Include="Caching\ICacheBehavior.cs" />
+    <Compile Include="Caching\ICacheBehaviorFactory.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Configuration\ContainerSetup.cs" />
+    <Compile Include="Configuration\IServiceConfiguration.cs" />
+    <Compile Include="Configuration\ScratchSpaceStorageOption.cs" />
+    <Compile Include="Configuration\ServiceConfiguration.cs" />
+    <Compile Include="Domain\Entity\AriaMetaData.cs" />
+    <Compile Include="Domain\Entity\CertificationRequestTaskProperty.cs" />
+    <Compile Include="Domain\Entity\DepartmentCode.cs" />
+    <Compile Include="Domain\Entity\ItemUsage.cs" />
+    <Compile Include="Domain\Entity\DocumentTemplateAssociation.cs" />
+    <Compile Include="Domain\Entity\ProjectProjectTemplate.cs" />
+    <Compile Include="Domain\Entity\TaskChangeResult.cs" />
+    <Compile Include="Domain\Entity\TaskTypeNotification.cs" />
+    <Compile Include="Domain\Entity\TaskProperty.cs" />
+    <Compile Include="Domain\Entity\TaskPropertyType.cs" />
+    <Compile Include="Domain\Entity\TaskPropertyTypeAttribute.cs" />
+    <Compile Include="Domain\Entity\TaskStatusList.cs" />
+    <Compile Include="Domain\Entity\TaskNotification.cs" />
+    <Compile Include="Domain\Entity\TaskTypeAvailableBehavior.cs" />
+    <Compile Include="Domain\Entity\TaskTypeAvailableBehaviorField.cs" />
+    <Compile Include="Domain\Entity\TaskTypeBehavior.cs" />
+    <Compile Include="Domain\Repository\AssocationRepository.cs" />
+    <Compile Include="Domain\Entity\BusinessUnitAssociation.cs" />
+    <Compile Include="Domain\Entity\Document.cs" />
+    <Compile Include="Domain\Entity\AssetLink.cs" />
+    <Compile Include="Domain\Entity\ContactRoleEnum.cs" />
+    <Compile Include="Domain\Entity\CustomerOrganization.cs" />
+    <Compile Include="Domain\Entity\DocumentVersion.cs" />
+    <Compile Include="Domain\Entity\EntityAssetLinkHistory.cs" />
+    <Compile Include="Domain\Entity\EntityHistory.cs" />
+    <Compile Include="Domain\Entity\EntityTaskHistory.cs" />
+    <Compile Include="Domain\Entity\ITrackedDomainEntity.cs" />
+    <Compile Include="Domain\Entity\Link.cs" />
+    <Compile Include="Domain\Entity\LinkAssociation.cs" />
+    <Compile Include="Domain\Entity\LocationCode.cs" />
+    <Compile Include="Domain\Entity\LookupCodeBase.cs" />
+    <Compile Include="Domain\Entity\TaskBase.cs" />
+    <Compile Include="Domain\Entity\TaskCategory.cs" />
+    <Compile Include="Domain\Entity\TaskHistory.cs" />
+    <Compile Include="Domain\Entity\TaskType.cs" />
+    <Compile Include="Domain\Entity\UserTeam.cs" />
+    <Compile Include="Domain\Entity\UserTeamMember.cs" />
+    <Compile Include="Domain\Lookup\BusinessUnit.cs" />
+    <Compile Include="Domain\Entity\MetaDelta.cs" />
+    <Compile Include="Domain\Entity\TaskDelta.cs" />
+    <Compile Include="Domain\History.cs" />
+    <Compile Include="Domain\Entity\ServiceCode.cs" />
+    <Compile Include="Domain\Entity\Lookup.cs" />
+    <Compile Include="Domain\Entity\MetaDataLink.cs" />
+    <Compile Include="Domain\Entity\Notification.cs" />
+    <Compile Include="Domain\Entity\OrderServiceLineDetail.cs" />
+    <Compile Include="Domain\Entity\FavoriteSearch.cs" />
+    <Compile Include="Domain\Entity\PartialUpdateFavoriteSearch.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicAssociationModel.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyDetail.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureAllowedValueDependency.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureDependency.cs" />
+    <Compile Include="Domain\Entity\ProjectStatusMessageServiceLine.cs" />
+    <Compile Include="Domain\Entity\ProjectStatusMessage.cs" />
+    <Compile Include="Domain\Entity\ProjectDetail.cs" />
+    <Compile Include="Domain\Entity\Sender.cs" />
+    <Compile Include="Domain\Entity\TaskCompletionHistory.cs" />
+    <Compile Include="Domain\Entity\TaskContainer.cs" />
+    <Compile Include="Domain\Entity\TaskHistoryBase.cs" />
+    <Compile Include="Domain\Entity\TaskProjectMapping.cs" />
+    <Compile Include="Domain\Entity\TaskStatusHistory.cs" />
+    <Compile Include="Domain\Entity\IndustryCode.cs" />
+    <Compile Include="Domain\Entity\NameValuePair.cs" />
+    <Compile Include="Domain\Repository\AssociatedPrimaryRepository.cs" />
+    <Compile Include="Domain\Repository\AuditableEntity.cs" />
+    <Compile Include="Domain\Repository\IAuditableEntity.cs" />
+    <Compile Include="Domain\Repository\PrimaryRepository.cs" />
+    <Compile Include="Domain\Lookup\DocumentTemplate.cs" />
+    <Compile Include="Domain\Search\CompanySearchResult.cs" />
+    <Compile Include="Domain\Search\CompanySearchResultSet.cs" />
+    <Compile Include="Domain\Search\DepartmentCodeSearchResult.cs" />
+    <Compile Include="Domain\Search\DepartmentCodeSearchResultSet.cs" />
+    <Compile Include="Domain\Search\IndustryCodeSearchResult.cs" />
+    <Compile Include="Domain\Search\IndustryCodeSearchResultSet.cs" />
+    <Compile Include="Domain\Search\ISearchRepositoryBase.cs" />
+    <Compile Include="Domain\Search\LinkSearchResult.cs" />
+    <Compile Include="Domain\Search\LinkSearchResultSet.cs" />
+    <Compile Include="Domain\Search\LookupCodeSearchResult.cs" />
+    <Compile Include="Domain\Search\OrderServiceLineDetailResult.cs" />
+    <Compile Include="Domain\Search\OrderServiceLineDetailSearchResultSet.cs" />
+    <Compile Include="Domain\Search\FavoriteSearchSearchResult.cs" />
+    <Compile Include="Domain\Search\SearchBaseResultSet.cs" />
+    <Compile Include="Domain\Search\SearchRepositoryBase.cs" />
+    <Compile Include="Domain\Search\ServiceCodeSearchResult.cs" />
+    <Compile Include="Domain\Search\ServiceCodeSearchResultSet.cs" />
+    <Compile Include="Domain\Search\TaskTemplateSearchResult.cs" />
+    <Compile Include="Domain\Search\TaskCategorySearchResultSet.cs" />
+    <Compile Include="Domain\SharePoint\MetaDataTypeAndValue.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainer.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainerClaim.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainerGroup.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainerGroupPermission.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainerList.cs" />
+    <Compile Include="Domain\SharePoint\SharePointContainerListType.cs" />
+    <Compile Include="Domain\Validator\FavoriteSearchValidator.cs" />
+    <Compile Include="Domain\View\ContactUs.cs" />
+    <Compile Include="Domain\View\NewCompanyEmail.cs" />
+    <Compile Include="Domain\View\ProjectAssignmentEmail.cs" />
+    <Compile Include="Domain\View\ProjectCompletedEmail.cs" />
+    <Compile Include="Domain\View\ProjectEmail.cs" />
+    <Compile Include="Domain\View\ProjectOrderOwnerReassignedEmail.cs" />
+    <Compile Include="Domain\View\TaskCompletedEmail.cs" />
+    <Compile Include="Domain\View\TaskEmail.cs" />
+    <Compile Include="Implementation\BusinessUnitService.cs" />
+    <Compile Include="Implementation\CategoryService.cs" />
+    <Compile Include="Implementation\CertificationManagementService.cs" />
+    <Compile Include="Implementation\ContactService.cs" />
+    <Compile Include="Implementation\ContentService.cs" />
+    <Compile Include="Implementation\CustomerService.cs" />
+    <Compile Include="Implementation\DepartmentCodeService.cs" />
+    <Compile Include="Implementation\DocumentContentService.cs" />
+    <Compile Include="Implementation\DocumentManagementService.cs" />
+    <Compile Include="Implementation\DocumentsService.cs" />
+    <Compile Include="Implementation\DocumentTemplateService.cs" />
+    <Compile Include="Implementation\LinkService.cs" />
+    <Compile Include="Implementation\LocationCodeService.cs" />
+    <Compile Include="Implementation\LookupService.cs" />
+    <Compile Include="Implementation\HistoryService.cs" />
+    <Compile Include="Implementation\ServiceCodeService.cs" />
+    <Compile Include="Implementation\NotificationService.cs" />
+    <Compile Include="Implementation\OrderServiceLineDetailService.cs" />
+    <Compile Include="Implementation\ProductFamilyFeatureValueService.cs" />
+    <Compile Include="Implementation\IndustryCodeService.cs" />
+    <Compile Include="Implementation\TaskCategoryService.cs" />
+    <Compile Include="Implementation\TaskTypeAvailableBehaviorService.cs" />
+    <Compile Include="Implementation\TaskTypeService.cs" />
+    <Compile Include="Implementation\UnitOfMeasureService.cs" />
+    <Compile Include="Auditing\AuditResourceAttribute.cs" />
+    <Compile Include="Auditing\AuditInterceptionBehaviorBase.cs" />
+    <Compile Include="Implementation\UserTeamService.cs" />
+    <Compile Include="Logging\LoggingUtility.cs" />
+    <Compile Include="Logging\MessageIds.cs" />
+    <Compile Include="Manager\BusinessUnitManager.cs" />
+    <Compile Include="Manager\CertificationRequestManager.cs" />
+    <Compile Include="Manager\DataRule\IDataRuleContext.cs" />
+    <Compile Include="Manager\DataRule\IDataRuleManager.cs" />
+    <Compile Include="Manager\DataRule\IWorkflowDataContextFactory.cs" />
+    <Compile Include="Manager\DataRule\IWorkflowManagerFactory.cs" />
+    <Compile Include="Manager\DataRule\Task\DeletedTaskDeletesAllChildren.cs" />
+    <Compile Include="Manager\DataRule\Task\DeletedTaskRemoveSuccessorPredecessorRelationships.cs" />
+    <Compile Include="Manager\DataRule\Task\LastTaskCompletedCanceledSetProjectComplete.cs" />
+    <Compile Include="Manager\DataRule\Task\SendProjectStatusMessageDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\SetTaskOwnerForProjectHandlerTokenReplacementDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\SetTaskSearchMetaDataDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\SetTaskStatusDateManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\SetTaskSuccessorsStartDateWhenAllPredecessorsCompletedDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\TaskDataManipulationRuleManager.cs" />
+    <Compile Include="Manager\DataRule\Task\SetTaskCompletionPercentDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\TaskDataRuleContext.cs" />
+    <Compile Include="Manager\DataRule\Task\TaskOwnerToLowerTaskDataManipulationRule.cs" />
+    <Compile Include="Manager\DataRule\Task\TaskWorkflowRuleBase.cs" />
+    <Compile Include="Manager\DataRule\Workflow.cs" />
+    <Compile Include="Manager\DataRule\WorkflowDataContextFactory.cs" />
+    <Compile Include="Manager\DataRule\WorkflowManager.cs" />
+    <Compile Include="Manager\DataRule\WorkflowManagerFactory.cs" />
+    <Compile Include="Manager\DocumentManagementManager.cs" />
+    <Compile Include="Manager\DocumentManager.cs" />
+    <Compile Include="Manager\DocumentTemplateManager.cs" />
+    <Compile Include="Manager\IBusinessUnitManager.cs" />
+    <Compile Include="Manager\ICertificationRequestManager.cs" />
+    <Compile Include="Manager\IContactManager.cs" />
+    <Compile Include="Manager\IDocumentManagementManager.cs" />
+    <Compile Include="Manager\IDocumentManager.cs" />
+    <Compile Include="Manager\IDocumentTemplateManager.cs" />
+    <Compile Include="Manager\ILinkManager.cs" />
+    <Compile Include="Manager\IManagerBase.cs" />
+    <Compile Include="Manager\IProjectCoreManager.cs" />
+    <Compile Include="Manager\ISearchManagerBase.cs" />
+    <Compile Include="Manager\ITaskTypeAvailableBehaviorFieldManager.cs" />
+    <Compile Include="Manager\ITaskTypeAvailableBehaviorManager.cs" />
+    <Compile Include="Manager\ITaskTypeBehaviorManager.cs" />
+    <Compile Include="Manager\ITaskTypeManager.cs" />
+    <Compile Include="Manager\IUserTeamManager.cs" />
+    <Compile Include="Manager\LinkManager.cs" />
+    <Compile Include="Manager\ITaskCategoryManager.cs" />
+    <Compile Include="Manager\ManagerBase.cs" />
+    <Compile Include="Manager\DataRule\IDataManipulationRule.cs" />
+    <Compile Include="Manager\ProjectCoreManager.cs" />
+    <Compile Include="Manager\QueuedContactManager.cs" />
+    <Compile Include="Manager\SearchManagerBase.cs" />
+    <Compile Include="Manager\TaskCategoryManager.cs" />
+    <Compile Include="Manager\TaskTypeAvailableBehaviorFieldManager.cs" />
+    <Compile Include="Manager\TaskTypeAvailableBehaviorManager.cs" />
+    <Compile Include="Manager\TaskTypeBehaviorManager.cs" />
+    <Compile Include="Manager\TaskTypeManager.cs" />
+    <Compile Include="Manager\UserTeamManager.cs" />
+    <Compile Include="Manager\Validation\ITaskDeleteValidationManager.cs" />
+    <Compile Include="Manager\Validation\ITaskDeleteValidator.cs" />
+    <Compile Include="Manager\Validation\IValidationContext.cs" />
+    <Compile Include="Manager\Validation\ProjectIndustryCodeValidator.cs" />
+    <Compile Include="Manager\Validation\ProjectServiceLineValidator.cs" />
+    <Compile Include="Manager\Validation\TaskNotificationsRestrictedToProjectHandlerOrTaskOwner.cs" />
+    <Compile Include="Manager\Validation\TaskBehaviorRestrictedToProjectHandlerValidator.cs" />
+    <Compile Include="Manager\Validation\TaskBehaviorParentOfRestrictedParentNumbers.cs" />
+    <Compile Include="Manager\Validation\TaskBehaviorChildOfRestrictedChildTaskNumbers.cs" />
+    <Compile Include="Manager\Validation\TaskDeleteChildTaskPreventDeleteValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDeleteChildTaskStatusValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDueDateMustBeGreaterThanStartDateValidator.cs" />
+    <Compile Include="Manager\Validation\TaskSelfReferencingPredecessorNotAllowedValidator.cs" />
+    <Compile Include="Manager\Validation\TaskUpdateOnlyProjectHandlerCanUpdateStatusWhenTaskClosedValidator.cs" />
+    <Compile Include="Manager\Validation\TaskUpdatePreventUpdateWhenProjectClosedValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDeleteProjectHandlerValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDeletePreventDeletionValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDeleteProjectStatusValidator.cs" />
+    <Compile Include="Manager\Validation\TaskDeleteValidationManager.cs" />
+    <Compile Include="Manager\Validation\TaskIsProjectHandlerRestrictedValidator.cs" />
+    <Compile Include="Manager\Validation\TaskNotificationsRequireFreeformValidator.cs" />
+    <Compile Include="Manager\Validation\TaskOwnerIsULEmailValidator.cs" />
+    <Compile Include="Manager\Validation\TaskRequiredStringValidator.cs" />
+    <Compile Include="Manager\Validation\TaskValidationContext.cs" />
+    <Compile Include="Notifications\NotificationContext.cs" />
+    <Compile Include="Notifications\TaskSetSuccesorStatusStrategy.cs" />
+    <Compile Include="Notifications\TaskSuccessorStartDateChangedNotificationCheck.cs" />
+    <Compile Include="Provider\AzureBlobStorageLocatorProviderResolver.cs" />
+    <Compile Include="Provider\AzureProviderBase.cs" />
+    <Compile Include="Provider\AzureServiceBusQueueLocatorProviderResolver.cs" />
+    <Compile Include="Provider\BusinessUnitAssociationProvider.cs" />
+    <Compile Include="Provider\BusinessUnitProvider.cs" />
+    <Compile Include="Provider\ContactOrderAzureServiceBusQueueLocatorProvider.cs" />
+    <Compile Include="Provider\ContactOrderProvider.cs" />
+    <Compile Include="Provider\CryptographyProvider.cs" />
+    <Compile Include="Provider\CryptographyProviderConfigurationSource.cs" />
+    <Compile Include="Provider\DepartmentCodeProvider.cs" />
+    <Compile Include="Provider\DocumentContentAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Manager\ContainerBuilderBase.cs" />
+    <Compile Include="Manager\ContainerDefinitionConstants.cs" />
+    <Compile Include="Manager\CustomerManager.cs" />
+    <Compile Include="Manager\DocumentContentManager.cs" />
+    <Compile Include="Provider\DocumentContentProviderConfigurationSource.cs" />
+    <Compile Include="Provider\DocumentProvider.cs" />
+    <Compile Include="Provider\DocumentTemplateProvider.cs" />
+    <Compile Include="Provider\IAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Provider\IAzureBlobStorageLocatorProviderResolver.cs" />
+    <Compile Include="Provider\IAzureServiceBusQueueLocatorProvider.cs" />
+    <Compile Include="Provider\IAzureServiceBusQueueLocatorProviderResolver.cs" />
+    <Compile Include="Provider\IBusinessUnitAssociationProvider.cs" />
+    <Compile Include="Provider\IBusinessUnitProvider.cs" />
+    <Compile Include="Provider\IContactOrderProvider.cs" />
+    <Compile Include="Provider\ICryptographyProvider.cs" />
+    <Compile Include="Provider\ICryptographyProviderConfigurationSource.cs" />
+    <Compile Include="Manager\IDocumentContentManager.cs" />
+    <Compile Include="Manager\LookupManager.cs" />
+    <Compile Include="Manager\IContainerBuilder.cs" />
+    <Compile Include="Manager\ICustomerManager.cs" />
+    <Compile Include="Manager\ILookupManager.cs" />
+    <Compile Include="Manager\IIncomingOrderManager.cs" />
+    <Compile Include="Manager\IncomingOrderManager.cs" />
+    <Compile Include="Manager\INotificationManager.cs" />
+    <Compile Include="Manager\IOutboundMessageManager.cs" />
+    <Compile Include="Manager\IProductFamilyAttributeManager.cs" />
+    <Compile Include="Manager\IProductFamilyFeatureManager.cs" />
+    <Compile Include="Manager\IHistoryManager.cs" />
+    <Compile Include="Manager\NotificationManager.cs" />
+    <Compile Include="Manager\OrderContainerBuilder.cs" />
+    <Compile Include="Manager\OutboundMessageManager.cs" />
+    <Compile Include="Manager\ProductContainerBuilder.cs" />
+    <Compile Include="Manager\ProductFamilyAttributeManager.cs" />
+    <Compile Include="Manager\ProductFamilyFeatureManager.cs" />
+    <Compile Include="Manager\ProjectContainerBuilder.cs" />
+    <Compile Include="Manager\HistoryManager.cs" />
+    <Compile Include="Manager\Validation\IProjectValidationManager.cs" />
+    <Compile Include="Manager\Validation\IProjectValidator.cs" />
+    <Compile Include="Manager\Validation\ITaskValidationManager.cs" />
+    <Compile Include="Manager\Validation\ITaskValidator.cs" />
+    <Compile Include="Manager\Validation\ProjectTaskStatusValidator.cs" />
+    <Compile Include="Manager\Validation\ProjectValidationManager.cs" />
+    <Compile Include="Manager\Validation\TaskAwaitingAssignmentStatusValidator.cs" />
+    <Compile Include="Manager\Validation\TaskParentChildPredecessorValidator.cs" />
+    <Compile Include="Manager\Validation\TaskSubTaskPredecessorStatusValidator.cs" />
+    <Compile Include="Manager\Validation\TaskUnassignedValidator.cs" />
+    <Compile Include="Manager\Validation\TaskValidationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Notifications\INotificationStrategyFactory.cs" />
+    <Compile Include="Notifications\INotificatonStrategy.cs" />
+    <Compile Include="Notifications\IOrderLineNotificationCheck.cs" />
+    <Compile Include="Notifications\IOrderLineNotificationCheckManager.cs" />
+    <Compile Include="Notifications\IOrderNotificationCheck.cs" />
+    <Compile Include="Notifications\IOrderNotificationCheckManager.cs" />
+    <Compile Include="Notifications\IProjectNotificationCheck.cs" />
+    <Compile Include="Notifications\IProjectNotificationCheckManager.cs" />
+    <Compile Include="Notifications\ITaskNotificationCheck.cs" />
+    <Compile Include="Notifications\ITaskNotificationCheckManager.cs" />
+    <Compile Include="Notifications\OrderCanceledNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderCleanupNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderLineCanceledNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderLineCleanupNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderLineNotificationCheckManager.cs" />
+    <Compile Include="Notifications\OrderLineOnHoldNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderLineStatusChangeNotificationCheck.cs" />
+    <Compile Include="Notifications\OrderNotificationCheckManager.cs" />
+    <Compile Include="Notifications\NotificationCleanupStrategy.cs" />
+    <Compile Include="Notifications\NotificationStrategyFactory.cs" />
+    <Compile Include="Notifications\NotificationTypeAttribute.cs" />
+    <Compile Include="Notifications\OrderCanceledStrategy.cs" />
+    <Compile Include="Notifications\OrderCleanupStrategy.cs" />
+    <Compile Include="Notifications\OrderLineCanceledStrategy.cs" />
+    <Compile Include="Notifications\OrderLineCleanupStrategy.cs" />
+    <Compile Include="Notifications\OrderLineOnHoldStrategy.cs" />
+    <Compile Include="Notifications\OrderOnHoldNotificationCheck.cs" />
+    <Compile Include="Notifications\ProjectHandlerChangeStrategy.cs" />
+    <Compile Include="Notifications\OrderOnHoldStrategy.cs" />
+    <Compile Include="Notifications\NotificationStrategyBase.cs" />
+    <Compile Include="Notifications\OrderNotificationStrategyBase.cs" />
+    <Compile Include="Notifications\OrderStatusChangeNotificationCheck.cs" />
+    <Compile Include="Notifications\ProjectNotificationCheck.cs" />
+    <Compile Include="Notifications\ProjectHandlerNotificationCheck.cs" />
+    <Compile Include="Notifications\ProjectNotificationCheckManager.cs" />
+    <Compile Include="Notifications\TaskCommentNotificationCheck.cs" />
+    <Compile Include="Notifications\TaskCommentStrategy.cs" />
+    <Compile Include="Notifications\TaskDueDateNotificationCheck.cs" />
+    <Compile Include="Notifications\TaskDueDateStrategy.cs" />
+    <Compile Include="Notifications\TaskNotificationCheckManager.cs" />
+    <Compile Include="Notifications\TaskNotificationStrategyBase.cs" />
+    <Compile Include="Notifications\TaskReminderNotificationCheck.cs" />
+    <Compile Include="Notifications\TaskReminderRemovalNotificationCheck.cs" />
+    <Compile Include="Notifications\TaskReminderRemovalStrategy.cs" />
+    <Compile Include="Notifications\TaskReminderStrategy.cs" />
+    <Compile Include="Notifications\TaskStatusNotificationCheck.cs" />
+    <Compile Include="Parser\CustomerOrganizationParser.cs" />
+    <Compile Include="Parser\OrderServiceLineDetailXmlParser.cs" />
+    <Compile Include="Provider\DocumentContentProvider.cs" />
+    <Compile Include="Provider\CategoryProvider.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityAssetLinkHistoryStrategy.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityHistoryContext.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityHistoryStrategyBase.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityHistoryStrategyResolver.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityProjectHistoryStrategy.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\IEntityHistoryStrategyResolver.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\EntityTaskHistoryStrategy.cs" />
+    <Compile Include="Provider\HistoryDocumentBuilder.cs" />
+    <Compile Include="Provider\EntityHistoryStrategy\IEntityHistoryStrategy.cs" />
+    <Compile Include="Provider\IDepartmentCodeProvider.cs" />
+    <Compile Include="Provider\IDocumentContentProvider.cs" />
+    <Compile Include="Provider\IDocumentContentProviderConfigurationSource.cs" />
+    <Compile Include="Provider\IDocumentProvider.cs" />
+    <Compile Include="Provider\IDocumentTemplateProvider.cs" />
+    <Compile Include="Provider\IHistoryDocumentBuilder.cs" />
+    <Compile Include="Provider\IInboundMessageProvider.cs" />
+    <Compile Include="Provider\IInboundMessageProviderConfigurationSource.cs" />
+    <Compile Include="Provider\IDocumentTemplateAssociationProvider.cs" />
+    <Compile Include="Provider\IIncomingOrderCoreProvider.cs" />
+    <Compile Include="Provider\ILinkAssociationProvider.cs" />
+    <Compile Include="Provider\IncomingOrderCoreProvider.cs" />
+    <Compile Include="Provider\IProjectProjectTemplateProvider.cs" />
+    <Compile Include="Provider\IProjectTemplateTaskCreationManager.cs" />
+    <Compile Include="Provider\ITaskTypeNotificationProvider.cs" />
+    <Compile Include="Provider\ITaskPropertyProvider.cs" />
+    <Compile Include="Provider\ITaskNotificationProvider.cs" />
+    <Compile Include="Provider\ITaskTypeAvailableBehaviorFieldProvider.cs" />
+    <Compile Include="Provider\ITaskTypeAvailableBehaviorProvider.cs" />
+    <Compile Include="Provider\ITaskTypeBehaviorProvider.cs" />
+    <Compile Include="Provider\IUserTeamProvider.cs" />
+    <Compile Include="Provider\ILinkProvider.cs" />
+    <Compile Include="Provider\ILocationCodeProvider.cs" />
+    <Compile Include="Provider\InboundMessageBlob.cs" />
+    <Compile Include="Provider\InboundMessageFailedAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Provider\InboundMessageNewAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Provider\InboundMessageNewAzureServiceBusQueueLocatorProvider.cs" />
+    <Compile Include="Provider\InboundMessageProviderConfigurationSource.cs" />
+    <Compile Include="Provider\InboundMessageSuccessfulAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Provider\InboundMessageProvider.cs" />
+    <Compile Include="Provider\IProviderBase.cs" />
+    <Compile Include="Provider\ISearchProviderBase.cs" />
+    <Compile Include="Provider\ITaskTemplateProvider.cs" />
+    <Compile Include="Provider\ITaskTypeProvider.cs" />
+    <Compile Include="Provider\DocumentTemplateAssociationProvider.cs" />
+    <Compile Include="Provider\LinkAssociationProvider.cs" />
+    <Compile Include="Provider\ProjectTemplateTaskCreationManager.cs" />
+    <Compile Include="Provider\SearchCoordinator\TaskProgressSearchFilterCoordinator.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\IQueryBuilder.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\ITaskProgressQueryBuilderFactory.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\QueryBuilderAttribute.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\QueryBuilderBase.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\TaskProgressInTroubleQueryBuilder.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\TaskProgressOnTrackQueryBuilder.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\TaskProgressQueryBuilderFactory.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\TaskProgressSlippingQueryBuilder.cs" />
+    <Compile Include="Provider\SearchCoordinator\Task\TaskProgressWaitingQueryBuilder.cs" />
+    <Compile Include="Provider\ProjectProjectTemplateProvider.cs" />
+    <Compile Include="Provider\TaskTypeNotificationProvider.cs" />
+    <Compile Include="Provider\TaskPropertyProvider.cs" />
+    <Compile Include="Provider\TaskNotificationProvider.cs" />
+    <Compile Include="Provider\TaskTypeAvailableBehaviorFieldProvider.cs" />
+    <Compile Include="Provider\TaskTypeAvailableBehaviorProvider.cs" />
+    <Compile Include="Provider\TaskTypeBehaviorProvider.cs" />
+    <Compile Include="Provider\UserTeamProvider.cs" />
+    <Compile Include="Provider\LinkProvider.cs" />
+    <Compile Include="Provider\ITaskCategoryProvider.cs" />
+    <Compile Include="Provider\LocationCodeProvider.cs" />
+    <Compile Include="Provider\LookupProvider.cs" />
+    <Compile Include="Provider\HistoryProvider.cs" />
+    <Compile Include="Provider\ILookupProvider.cs" />
+    <Compile Include="Provider\IHistoryProvider.cs" />
+    <Compile Include="Provider\InboundMessageOrderMessageAzureBlobStorageLocatorProvider.cs" />
+    <Compile Include="Provider\SearchCoordinator\ISearchCoordinator.cs" />
+    <Compile Include="Provider\SearchCoordinator\ISearchCoordinatorFactory.cs" />
+    <Compile Include="Provider\SearchCoordinator\ProjectPastDueSearchFilterDependencyCoordinator.cs" />
+    <Compile Include="Provider\SearchCoordinator\SearchCoordinatorFactory.cs" />
+    <Compile Include="Provider\SearchCoordinator\SearchCoordinatorForAttribute.cs" />
+    <Compile Include="Provider\SearchProviderBase.cs" />
+    <Compile Include="Provider\ServiceCodeProvider.cs" />
+    <Compile Include="Provider\IServiceCodeProvider.cs" />
+    <Compile Include="Provider\IndustryCodeProvider.cs" />
+    <Compile Include="Provider\INotificationProvider.cs" />
+    <Compile Include="Provider\ISenderProvider.cs" />
+    <Compile Include="Provider\IIndustryCodeProvider.cs" />
+    <Compile Include="Provider\NotificationProvider.cs" />
+    <Compile Include="Provider\SenderProvider.cs" />
+    <Compile Include="Provider\OrderServiceLineDetailProvider.cs" />
+    <Compile Include="Provider\IOrderServiceLineDetailProvider.cs" />
+    <Compile Include="Provider\ICategoryProvider.cs" />
+    <Compile Include="Provider\IMultiProjectDocumentBuilder.cs" />
+    <Compile Include="Provider\IProductFamilyFeatureValueProvider.cs" />
+    <Compile Include="Provider\IProjectStatusMessageProvider.cs" />
+    <Compile Include="Manager\ProductFamilyValidationManager.cs" />
+    <Compile Include="Provider\ITaskDocumentBuilder.cs" />
+    <Compile Include="Provider\MultiProjectDocumentBuilder.cs" />
+    <Compile Include="Provider\ProductFamilyFeatureValueProvider.cs" />
+    <Compile Include="Provider\ProjectStatusMessageProvider.cs" />
+    <Compile Include="Provider\SharePointQueryResult.cs" />
+    <Compile Include="Provider\TaskDocumentBuilder.cs" />
+    <Compile Include="Manager\Validation\ProductFeatureDependencyValidator.cs" />
+    <Compile Include="MapperResolver\BusinessClaimResolver.cs" />
+    <Compile Include="Domain\Entity\AssetFieldMetadata.cs" />
+    <Compile Include="Domain\Entity\Category.cs" />
+    <Compile Include="Domain\Entity\Claim.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicOption.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicUpload.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureAllowedValue.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureAllowedValueDependencyMapping.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureAllowedValueDependencyUpload.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureValue.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyUploadResult.cs" />
+    <Compile Include="Domain\Entity\TaskComment.cs" />
+    <Compile Include="Domain\Entity\TaskTemplate.cs" />
+    <Compile Include="Domain\Entity\TaskTemplates.cs" />
+    <Compile Include="Domain\Entity\UnitOfMeasure.cs" />
+    <Compile Include="Domain\Entity\Container.cs" />
+    <Compile Include="Domain\Entity\ContainerAvailableClaim.cs" />
+    <Compile Include="Domain\Entity\ContainerImportFile.cs" />
+    <Compile Include="Domain\Entity\ContainerList.cs" />
+    <Compile Include="Domain\Entity\ContainerListPermission.cs" />
+    <Compile Include="Domain\Entity\IAssetFieldMetadata.cs" />
+    <Compile Include="Domain\Entity\Order.cs" />
+    <Compile Include="Domain\Entity\AcceptanceClaim.cs" />
+    <Compile Include="Domain\Entity\ProductCharacteristic.cs" />
+    <Compile Include="Domain\Entity\DomainEntityExtentions.cs" />
+    <Compile Include="Domain\Entity\IncomingOrderContact.cs" />
+    <Compile Include="Domain\Entity\IncomingOrderCustomer.cs" />
+    <Compile Include="Domain\Entity\IncomingOrder.cs" />
+    <Compile Include="Domain\Entity\IncomingOrderServiceLine.cs" />
+    <Compile Include="Domain\Entity\Product.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyAttributeAssociation.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicAssociation.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeatureAssociation.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicType.cs" />
+    <Compile Include="Domain\Entity\ProductUploadMessage.cs" />
+    <Compile Include="Domain\Entity\ProductUpload.cs" />
+    <Compile Include="Domain\Entity\Project.cs" />
+    <Compile Include="Domain\Entity\ProjectCreationRequest.cs" />
+    <Compile Include="Domain\Entity\ProjectTemplate.cs" />
+    <Compile Include="Domain\Entity\Task.cs" />
+    <Compile Include="Domain\Entity\TaskPredecessor.cs" />
+    <Compile Include="Domain\Entity\UploadAction.cs" />
+    <Compile Include="Domain\ScratchFileUpload.cs" />
+    <Compile Include="Domain\Search\Sort.cs" />
+    <Compile Include="Domain\Entity\TrackedDomainEntity.cs" />
+    <Compile Include="Domain\Entity\BusinessClaim.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyCharacteristicDomainEntity.cs" />
+    <Compile Include="Domain\Entity\Company.cs" />
+    <Compile Include="Domain\Entity\PrimarySearchEntityBase.cs" />
+    <Compile Include="Domain\Entity\DocumentType.cs" />
+    <Compile Include="Domain\Entity\ProductFamily.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyAttribute.cs" />
+    <Compile Include="Domain\Entity\ProfileBo.cs" />
+    <Compile Include="Domain\Entity\ProfileEditBasicBo.cs" />
+    <Compile Include="Domain\Entity\ProfileImageBo.cs" />
+    <Compile Include="Domain\Entity\ProfileSearchSpecification.cs" />
+    <Compile Include="Domain\Entity\UserBusinessClaim.cs" />
+    <Compile Include="Domain\Entity\UserBusinessClaimHistory.cs" />
+    <Compile Include="Domain\Search\ProductUploadResultSearchResult.cs" />
+    <Compile Include="Domain\Search\ProductUploadResultSearchResultSet.cs" />
+    <Compile Include="Domain\Search\ProductUploadSearchResult.cs" />
+    <Compile Include="Domain\Search\ProductUploadSearchResultSet.cs" />
+    <Compile Include="Domain\Search\IncomingOrderSearchResult.cs" />
+    <Compile Include="Domain\Search\IncomingOrderSearchResultSet.cs" />
+    <Compile Include="Domain\Search\RefinementItem.cs" />
+    <Compile Include="Domain\Search\SearchCriteria.cs" />
+    <Compile Include="Domain\Search\SearchResult.cs" />
+    <Compile Include="Domain\Search\SearchResultSet.cs" />
+    <Compile Include="Domain\Search\SearchResultSetBase.cs" />
+    <Compile Include="Domain\Search\SearchSummary.cs" />
+    <Compile Include="Domain\Value\ContainerRole.cs" />
+    <Compile Include="Implementation\AriaService.cs" />
+    <Compile Include="Implementation\ContainerService.cs" />
+    <Compile Include="Implementation\ProjectTemplateService.cs" />
+    <Compile Include="Implementation\TaskService.cs" />
+    <Compile Include="Manager\ProjectTemplateManager.cs" />
+    <Compile Include="Manager\IProjectTemplateManager.cs" />
+    <Compile Include="Manager\IProductCharacteristicChildManager.cs" />
+    <Compile Include="Manager\IProductFamilyValidationManager.cs" />
+    <Compile Include="Manager\ProductCharacteristicChildManager.cs" />
+    <Compile Include="Manager\IProductFamilyImportManager.cs" />
+    <Compile Include="Manager\IProjectManager.cs" />
+    <Compile Include="Implementation\OrderService.cs" />
+    <Compile Include="Implementation\EmailService.cs" />
+    <Compile Include="Implementation\IncomingOrderService.cs" />
+    <Compile Include="Manager\ProductFamilyImportManager.cs" />
+    <Compile Include="Manager\ProjectManager.cs" />
+    <Compile Include="Implementation\ProjectService.cs" />
+    <Compile Include="Manager\AcceptanceClaimManager.cs" />
+    <Compile Include="Manager\ContainerDefinitionBuilder.cs" />
+    <Compile Include="Manager\TaskManager.cs" />
+    <Compile Include="Manager\ITaskManager.cs" />
+    <Compile Include="Manager\IContainerDefinitionBuilder.cs" />
+    <Compile Include="Manager\IContainerDefinitionManager.cs" />
+    <Compile Include="Manager\IContainerManager.cs" />
+    <Compile Include="Manager\IProductClaimAssignmentManager.cs" />
+    <Compile Include="Manager\IProductUploadDocumentImportManager.cs" />
+    <Compile Include="Manager\IProductUploadProductInsertManager.cs" />
+    <Compile Include="Manager\IProductUploadProductUpdateManager.cs" />
+    <Compile Include="Manager\OrderManager.cs" />
+    <Compile Include="Manager\IOrderManager.cs" />
+    <Compile Include="Manager\IAcceptanceClaimManager.cs" />
+    <Compile Include="Manager\IProductCharacteristicImportManager.cs" />
+    <Compile Include="Implementation\TermsAndConditionsService.cs" />
+    <Compile Include="Manager\IProductDocumentManager.cs" />
+    <Compile Include="Manager\IProductImportManager.cs" />
+    <Compile Include="Manager\IProductManager.cs" />
+    <Compile Include="Implementation\ProductService.cs" />
+    <Compile Include="Manager\IProductUploadImportManager.cs" />
+    <Compile Include="Manager\ISmtpClientManager.cs" />
+    <Compile Include="Manager\ProductCharacteristicImportManager.cs" />
+    <Compile Include="Manager\ProductClaimAssignmentManager.cs" />
+    <Compile Include="Manager\ProductDocumentManager.cs" />
+    <Compile Include="Manager\IProductFamilyCharacteristicGroupHelper.cs" />
+    <Compile Include="Manager\ProductFamilyCharacteristicGroupHelper.cs" />
+    <Compile Include="Domain\Entity\ProductUploadResult.cs" />
+    <Compile Include="Manager\ProductImportManager.cs" />
+    <Compile Include="Manager\ProductUploadDocumentImportManager.cs" />
+    <Compile Include="Manager\ProductUploadImportManager.cs" />
+    <Compile Include="Manager\ProductUploadProductInsertManager.cs" />
+    <Compile Include="Manager\ProductUploadProductUpdateManager.cs" />
+    <Compile Include="Manager\SmtpClientManager.cs" />
+    <Compile Include="Manager\StaticColumnProductCharacteristicImportManager.cs" />
+    <Compile Include="Manager\Validation\ICharacteristicValidator.cs" />
+    <Compile Include="Manager\Validation\IProductValidationManager.cs" />
+    <Compile Include="Manager\Validation\IProductValidator.cs" />
+    <Compile Include="Manager\Validation\ProductCharacteristicTypeValidator.cs" />
+    <Compile Include="Manager\Validation\ProductDocumentCharacteristicValidator.cs" />
+    <Compile Include="Manager\Validation\ProductFeatureValueValidator.cs" />
+    <Compile Include="Manager\Validation\ProductRequiredCharacteristicValidator.cs" />
+    <Compile Include="Manager\Validation\ProductValidationManager.cs" />
+    <Compile Include="Provider\AcceptanceClaimProvider.cs" />
+    <Compile Include="Provider\AllowedValuteTypeValidationBuilder.cs" />
+    <Compile Include="Provider\IProjectProvider.cs" />
+    <Compile Include="Provider\ProjectProvider.cs" />
+    <Compile Include="Provider\IFavoriteSearchProvider.cs" />
+    <Compile Include="Provider\ProjectTemplateProvider.cs" />
+    <Compile Include="Provider\IProjectTemplateProvider.cs" />
+    <Compile Include="Provider\FavoriteSearchProvider.cs" />
+    <Compile Include="Provider\SharePointRestApiAccessTokenGeneratorConfiguration.cs" />
+    <Compile Include="Provider\CustomerInformationProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\EstimatesAndConstraintsInformationProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\GeneralInformationProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\IProjectDocumentBuilder.cs" />
+    <Compile Include="Provider\IProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\IValidationBuilder.cs" />
+    <Compile Include="Provider\IUnitOfMeasureProvider.cs" />
+    <Compile Include="Provider\MiscellaneousProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\OrderInformationProjectDocumentSectionBuilder.cs" />
+    <Compile Include="Provider\ProductFamilyMultiTemplateBuilder.cs" />
+    <Compile Include="Provider\ProjectDocumentBuilder.cs" />
+    <Compile Include="Provider\Proxy\AriaContentServiceProxy.cs" />
+    <Compile Include="Provider\Proxy\IAriaContentServiceProxy.cs" />
+    <Compile Include="Provider\Proxy\IProxyConfigurationSource.cs" />
+    <Compile Include="Provider\ITaskProvider.cs" />
+    <Compile Include="Provider\IContainerProvider.cs" />
+    <Compile Include="Provider\IProductUploadDocumentCharacteristicProvider.cs" />
+    <Compile Include="Provider\IContainerSerializer.cs" />
+    <Compile Include="Provider\IProductUploadFamilyCharacteristicProvider.cs" />
+    <Compile Include="Provider\OrderProvider.cs" />
+    <Compile Include="Provider\IOrderProvider.cs" />
+    <Compile Include="Provider\DocumentBuilderBase.cs" />
+    <Compile Include="Provider\IAcceptanceClaimProvider.cs" />
+    <Compile Include="Provider\IProductDocumentBuilder.cs" />
+    <Compile Include="Provider\IProductFamilyDocumentBuilder.cs" />
+    <Compile Include="Provider\IProductFamilyDocumentBuilderLocator.cs" />
+    <Compile Include="Provider\ISmtpClientProvider.cs" />
+    <Compile Include="Provider\ITermsAndConditionsProvider.cs" />
+    <Compile Include="Provider\ProductDocumentBuilder.cs" />
+    <Compile Include="Provider\ProductFamilyDocumentBuilderBase.cs" />
+    <Compile Include="Provider\ProductFamilyDocumentBuilderLocator.cs" />
+    <Compile Include="Provider\ProductFamilyTemplateBuilder.cs" />
+    <Compile Include="Provider\IProductMetaDataProvider.cs" />
+    <Compile Include="Provider\ProductMetaDataProviderStub.cs" />
+    <Compile Include="Provider\ProductProvider.cs" />
+    <Compile Include="Provider\ProductTemplateBuilder.cs" />
+    <Compile Include="Manager\ProductManager.cs" />
+    <Compile Include="Provider\IProductProvider.cs" />
+    <Compile Include="Provider\ExcelTemplateKeys.cs" />
+    <Compile Include="Provider\ProductUploadDocumentCharacteristicProvider.cs" />
+    <Compile Include="Provider\ProductUploadFamilyCharacteristicProvider.cs" />
+    <Compile Include="Provider\TaskCategoryProvider.cs" />
+    <Compile Include="Provider\TaskTemplateProvider.cs" />
+    <Compile Include="Provider\TaskTypeProvider.cs" />
+    <Compile Include="Provider\TextExportExtensions.cs" />
+    <Compile Include="Provider\UnitOfMeasureValidationBuilder.cs" />
+    <Compile Include="Provider\WorkbookExtensions.cs" />
+    <Compile Include="Provider\Proxy\ProxyConfigurationSource.cs" />
+    <Compile Include="Provider\SharePointContainerSerializer.cs" />
+    <Compile Include="Provider\TaskProvider.cs" />
+    <Compile Include="Provider\WorkbookValidationBuilderBase.cs" />
+    <Compile Include="Proxy\CertificationRequestServiceProxy.cs" />
+    <Compile Include="Proxy\CertificationRequestServiceConfigurationSource.cs" />
+    <Compile Include="Proxy\CustomerPartyProxyConfigurationSource.cs" />
+    <Compile Include="Proxy\CustomerPartyServiceProxy.cs" />
+    <Compile Include="Proxy\ICertificationRequestServiceConfigurationSource.cs" />
+    <Compile Include="Proxy\ICustomerPartyProxyConfigurationSource.cs" />
+    <Compile Include="Proxy\IOutboundDocumentProxyConfigurationSource.cs" />
+    <Compile Include="Proxy\IOutboundDocumentServiceProxy.cs" />
+    <Compile Include="Proxy\IProxyConfigurationSource.cs" />
+    <Compile Include="Proxy\MessageServiceProxy.cs" />
+    <Compile Include="Proxy\OutboundDocumentProxyConfigurationSource.cs" />
+    <Compile Include="Proxy\OutboundDocumentServiceProxy.cs" />
+    <Compile Include="Repository\AriaMetaDataLinkRepository.cs" />
+    <Compile Include="Repository\AriaMetaDataRepository.cs" />
+    <Compile Include="Repository\AzureScratchSpaceRepository.cs" />
+    <Compile Include="Repository\AzureServiceBusQueueConfiguration.cs" />
+    <Compile Include="Repository\AzureServiceBusQueueRepositoryBase.cs" />
+    <Compile Include="Repository\AzureStorageBlobInternal.cs" />
+    <Compile Include="Repository\AzureBlobStorageConfiguration.cs" />
+    <Compile Include="Repository\AzureBlobStorageRepositoryConfigurationSourceBase.cs" />
+    <Compile Include="Repository\AzureBlobStorageRepositoryConfigurationSourceResolver.cs" />
+    <Compile Include="Repository\AzureBlobStorageContainer.cs" />
+    <Compile Include="Repository\AzureBlobStorageHelper.cs" />
+    <Compile Include="Repository\AzureBlobStorageRepository.cs" />
+    <Compile Include="Repository\BlobProperties.cs" />
+    <Compile Include="Repository\BusinessUnitAssociationRepository.cs" />
+    <Compile Include="Repository\BusinessUnitRepository.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\ContactOrderAzureServiceBusQueueRepository.cs" />
+    <Compile Include="Repository\DepartmentCodeRepository.cs" />
+    <Compile Include="Repository\DocumentContentAzureBlobStorageRepositoryConfigurationSource.cs" />
+    <Compile Include="Repository\DocumentTemplateAssociationRepository.cs" />
+    <Compile Include="Repository\IDepartmentCodeRepository.cs" />
+    <Compile Include="Repository\IProjectProjectTemplateRepository.cs" />
+    <Compile Include="Repository\ITaskTypeNotificationRepository.cs" />
+    <Compile Include="Repository\ITaskPropertyRepository.cs" />
+    <Compile Include="Repository\ITaskNotificationRepository.cs" />
+    <Compile Include="Repository\ITaskTypeAvailableBehaviorFieldRepository.cs" />
+    <Compile Include="Repository\ITaskTypeAvailableBehaviorRepository.cs" />
+    <Compile Include="Repository\ITaskTypeBehaviorRepository.cs" />
+    <Compile Include="Repository\ProjectProjectTemplateAssociationRepository.cs" />
+    <Compile Include="Repository\DocumentTemplateRepository.cs" />
+    <Compile Include="Repository\DocumentVersionRepository.cs" />
+    <Compile Include="Repository\DocumentRepository.cs" />
+    <Compile Include="Repository\IAriaMetaDataLinkRepository.cs" />
+    <Compile Include="Repository\IAriaMetaDataRepository.cs" />
+    <Compile Include="Repository\IAzureBlobStorageRepositoryConfigurationSource.cs" />
+    <Compile Include="Repository\IAzureBlobStorageRepositoryConfigurationSourceResolver.cs" />
+    <Compile Include="Repository\IAzureBlobStorageRepository.cs" />
+    <Compile Include="Repository\IAzureServiceBusQueueRepository.cs" />
+    <Compile Include="Repository\IBusinessUnitAssociationRepository.cs" />
+    <Compile Include="Repository\IBusinessUnitRepository.cs" />
+    <Compile Include="Repository\IDocumentTemplateRepository.cs" />
+    <Compile Include="Repository\IDocumentVersionRepository.cs" />
+    <Compile Include="Repository\IDocumentRepository.cs" />
+    <Compile Include="Repository\IDocumentTemplateAssociationRepository.cs" />
+    <Compile Include="Repository\ILinkAssociationRepository.cs" />
+    <Compile Include="Repository\IUserTeamMemberRepository.cs" />
+    <Compile Include="Repository\IUserTeamRepository.cs" />
+    <Compile Include="Repository\ILinkRepository.cs" />
+    <Compile Include="Repository\ILocationCodeRepository.cs" />
+    <Compile Include="Repository\ILookupCodeRepositoryBase.cs" />
+    <Compile Include="Repository\InboundMessageAzureBlobStorageRepositoryConfigurationSource.cs" />
+    <Compile Include="Repository\InboundMessageAzureServiceBusQueueRepository.cs" />
+    <Compile Include="Repository\ITaskRepository.cs" />
+    <Compile Include="Repository\ITaskTemplateRepository.cs" />
+    <Compile Include="Repository\LinkAssociationRepository.cs" />
+    <Compile Include="Repository\SaveEnum.cs" />
+    <Compile Include="Repository\TaskTypeNotificationRepository.cs" />
+    <Compile Include="Repository\TaskPropertyRepository.cs" />
+    <Compile Include="Repository\TaskNotificationRepository.cs" />
+    <Compile Include="Repository\TaskTypeAvailableBehaviorFieldRepository.cs" />
+    <Compile Include="Repository\TaskTypeAvailableBehaviorRepository.cs" />
+    <Compile Include="Repository\TaskTypeBehaviorRepository.cs" />
+    <Compile Include="Repository\UserTeamMemberRepository.cs" />
+    <Compile Include="Repository\UserTeamRepository.cs" />
+    <Compile Include="Repository\LinkRepository.cs" />
+    <Compile Include="Repository\ITaskTypeRepository.cs" />
+    <Compile Include="Repository\ITaskCategoryRepository.cs" />
+    <Compile Include="Repository\LocationCodeRepository.cs" />
+    <Compile Include="Repository\LookupCodeRepositoryBase.cs" />
+    <Compile Include="Repository\LookupRepository.cs" />
+    <Compile Include="Repository\HistoryRepository.cs" />
+    <Compile Include="Repository\ILookupRepository.cs" />
+    <Compile Include="Repository\IHistoryRepository.cs" />
+    <Compile Include="Repository\RepositoryHelper.cs" />
+    <Compile Include="Repository\ServiceCodeRepository.cs" />
+    <Compile Include="Repository\IServiceCodeRepository.cs" />
+    <Compile Include="Repository\INotificationRepository.cs" />
+    <Compile Include="Repository\ISenderRepository.cs" />
+    <Compile Include="Repository\IIndustryCodeRepository.cs" />
+    <Compile Include="Repository\NotificationRepository.cs" />
+    <Compile Include="Repository\ProductFamilyAttributeAssociationRepository.cs" />
+    <Compile Include="Repository\ProductFamilyCharacteristicAssociationRepositoryBase.cs" />
+    <Compile Include="Repository\SenderRepository.cs" />
+    <Compile Include="Repository\OrderServiceLineDetailRepository.cs" />
+    <Compile Include="Repository\IOrderServiceLineDetailRepository.cs" />
+    <Compile Include="Repository\IProjectRepository.cs" />
+    <Compile Include="Repository\ProjectRepository.cs" />
+    <Compile Include="Repository\FavoriteSearchRepository.cs" />
+    <Compile Include="Repository\IFavoriteSearchRepository.cs" />
+    <Compile Include="Repository\IProjectStatusMessageRepository.cs" />
+    <Compile Include="Repository\ProjectStatusMessageRepository.cs" />
+    <Compile Include="Repository\ProjectTemplateRepository.cs" />
+    <Compile Include="Repository\IProjectTemplateRepository.cs" />
+    <Compile Include="Repository\ICategoryRepository.cs" />
+    <Compile Include="Repository\IProductAttributeOptionRepository.cs" />
+    <Compile Include="Repository\IProductFamilyFeatureAllowedValueDependencyRepository.cs" />
+    <Compile Include="Repository\IProductFamilyFeatureAllowedValueRepository.cs" />
+    <Compile Include="Repository\IProductFamilyFeatureValueRepository.cs" />
+    <Compile Include="Repository\IUnitOfMeasureRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\IOrderRepository.cs" />
+    <Compile Include="Repository\AcceptanceClaimRepository.cs" />
+    <Compile Include="Repository\IAcceptanceClaimRepository.cs" />
+    <Compile Include="Repository\ProductAttributeOptionRepository.cs" />
+    <Compile Include="Repository\ProductCharacteristicOptionRepositoryBase.cs" />
+    <Compile Include="Repository\ProductFamilyFeatureAllowedValueDependencyRepository.cs" />
+    <Compile Include="Repository\ProductFamilyFeatureAllowedValueRepository.cs" />
+    <Compile Include="Repository\ProductFamilyFeatureValueRepository.cs" />
+    <Compile Include="Repository\ProductFeatureOptionRepository.cs" />
+    <Compile Include="Repository\ProductUploadMessageRepository.cs" />
+    <Compile Include="Repository\IProductUploadMessageRepository.cs" />
+    <Compile Include="Repository\ProductUploadResultRepository.cs" />
+    <Compile Include="Repository\IProductUploadResultRepository.cs" />
+    <Compile Include="Provider\TermsAndConditionsProvider.cs" />
+    <Compile Include="Repository\IProductUploadRepository.cs" />
+    <Compile Include="Repository\ITermsAndConditionsRepository.cs" />
+    <Compile Include="Repository\ProductUploadRepository.cs" />
+    <Compile Include="Provider\SmtpClientProvider.cs" />
+    <Compile Include="Repository\IProductFamilyFeatureAssociationRepository.cs" />
+    <Compile Include="Repository\ProductCharacteristicRepository.cs" />
+    <Compile Include="Repository\IProductCharacteristicRepository.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\IScratchSpaceConfigurationSource.cs" />
+    <Compile Include="Repository\IScratchSpaceRepository.cs" />
+    <Compile Include="Repository\ProductFamilyFeatureAssociationRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Domain\ScratchFileInfo.cs" />
+    <Compile Include="Implementation\ScratchSpaceService.cs" />
+    <Compile Include="Repository\LocalScratchSpaceRepository.cs" />
+    <Compile Include="Manager\IProductFamilyTemplateManager.cs" />
+    <Compile Include="Manager\ProductFamilyTemplateManager.cs" />
+    <Compile Include="Parser\IXmlParser.cs" />
+    <Compile Include="Parser\IncomingOrderXmlParser.cs" />
+    <Compile Include="Parser\XmlParserBase.cs" />
+    <Compile Include="Manager\ContainerManager.cs" />
+    <Compile Include="Provider\IIncomingOrderProvider.cs" />
+    <Compile Include="Provider\IProductFamilyFeatureProvider.cs" />
+    <Compile Include="Domain\Entity\ProductFamilyFeature.cs" />
+    <Compile Include="Implementation\ProductFamilyFeatureService.cs" />
+    <Compile Include="Implementation\ProductFamilyAttributeService.cs" />
+    <Compile Include="Manager\IProductFamilyManager.cs" />
+    <Compile Include="Implementation\ProductFamilyService.cs" />
+    <Compile Include="Implementation\CompanyService.cs" />
+    <Compile Include="Implementation\IUserBusinessClaimServiceValidator.cs" />
+    <Compile Include="Implementation\ProfileService.cs" />
+    <Compile Include="Implementation\UserBusinessClaimService.cs" />
+    <Compile Include="Implementation\UserBusinessClaimServiceValidator.cs" />
+    <Compile Include="Manager\CompanyManager.cs" />
+    <Compile Include="Manager\ICompanyManager.cs" />
+    <Compile Include="Manager\IProfileManager.cs" />
+    <Compile Include="Manager\ProductFamilyManager.cs" />
+    <Compile Include="Manager\ProfileManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\BusinessMessageUserClaimProviderDecorator.cs" />
+    <Compile Include="Provider\IncomingOrderProvider.cs" />
+    <Compile Include="Provider\ProductFamilyAttributeProvider.cs" />
+    <Compile Include="Provider\CompanyProvider.cs" />
+    <Compile Include="Provider\ContainerProvider.cs" />
+    <Compile Include="Provider\AssetProvider.cs" />
+    <Compile Include="Repository\CharacteristicRepositoryBase.cs" />
+    <Compile Include="Repository\IIncomingOrderRepository.cs" />
+    <Compile Include="Repository\IncomingOrderRepository.cs" />
+    <Compile Include="Repository\ProductFamilyAttributeRepository.cs" />
+    <Compile Include="Domain\Entity\TermsAndConditions.cs" />
+    <Compile Include="Repository\ResultBuilder.cs" />
+    <Compile Include="Repository\TaskRepository.cs" />
+    <Compile Include="Repository\TaskTemplateRepository.cs" />
+    <Compile Include="Repository\TaskTypeRepository.cs" />
+    <Compile Include="Repository\TaskCategoryRepository.cs" />
+    <Compile Include="Repository\TermsAndConditionsRepository.cs" />
+    <Compile Include="Domain\Entity\TermsAndConditionsType.cs" />
+    <Compile Include="Repository\TrackedDomainEntityRepositoryBase.cs" />
+    <Compile Include="Repository\IProductFamilyFeatureRepository.cs" />
+    <Compile Include="Provider\ProductFamilyFeatureProvider.cs" />
+    <Compile Include="Provider\IProductFamilyAttributeProvider.cs" />
+    <Compile Include="Provider\IProductFamilyProvider.cs" />
+    <Compile Include="Repository\IProductFamilyAttributeRepository.cs" />
+    <Compile Include="Provider\ISharePointQuery.cs" />
+    <Compile Include="Provider\IAssetProvider.cs" />
+    <Compile Include="Provider\ICompanyProvider.cs" />
+    <Compile Include="Provider\ISharepointConfigurationSource.cs" />
+    <Compile Include="Provider\ISearchProvider.cs" />
+    <Compile Include="Provider\IUserBusinessClaimProvider.cs" />
+    <Compile Include="Provider\ProductFamilyProvider.cs" />
+    <Compile Include="Provider\SharepointConfigurationSource.cs" />
+    <Compile Include="Provider\SearchProvider.cs" />
+    <Compile Include="Provider\SharePointQuery.cs" />
+    <Compile Include="Provider\UserBusinessClaimProvider.cs" />
+    <Compile Include="Repository\CompanyRepository.cs" />
+    <Compile Include="Repository\ContainerRepository.cs" />
+    <Compile Include="Repository\IProductFamilyRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repository\ICompanyRepository.cs" />
+    <Compile Include="Repository\IContainerRepository.cs" />
+    <Compile Include="Repository\AriaSharepointSerializationHelper.cs" />
+    <Compile Include="Repository\IProfileRepository.cs" />
+    <Compile Include="Repository\ProductFamilyFeatureRepository.cs" />
+    <Compile Include="Repository\ProductFamilyRepository.cs" />
+    <Compile Include="Repository\ProfileRepository.cs" />
+    <Compile Include="Repository\SharepointRequest.cs" />
+    <Compile Include="Repository\IndustryCodeRepository.cs" />
+    <Compile Include="Repository\UnitOfMeasureRepository.cs" />
+    <Compile Include="Security\CustomClaimsAuthenticationManager.cs" />
+    <Compile Include="Security\CustomClaimsAuthorizationManager.cs" />
+    <Compile Include="Security\PrincipalResolver.cs" />
+    <Compile Include="ServiceMapperRegistry.cs" />
+    <Compile Include="TaskStatus\ITaskFetchStatusListStrategy.cs" />
+    <Compile Include="TaskStatus\ITaskFetchStatusListStrategyFactory.cs" />
+    <Compile Include="TaskStatus\ITaskFetchStatusStrategy.cs" />
+    <Compile Include="TaskStatus\ITaskFetchStatusStrategyFactory.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyAwaitingAssignment.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyCanceled.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyCompleted.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyFactory.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyInProgress.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyNotScheduled.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusListStrategyOnHold.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusReActivateStrategy.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusStrategyCalculate.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusStrategyFactory.cs" />
+    <Compile Include="TaskStatus\TaskFetchStatusStrategyNonCalculate.cs" />
+    <Compile Include="Templating\AssemblyManifestTemplateResolver.cs" />
+    <Compile Include="Templating\AriaTemplateService.cs" />
+    <Compile Include="Templating\IAriaTemplateService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SolutionItems\UL.Aria.snk">
+      <Link>UL.Aria.snk</Link>
+    </None>
+    <EmbeddedResource Include="Views\Email\_Layout.cshtml" />
+    <EmbeddedResource Include="Views\Email\AccessGrant.cshtml" />
+    <EmbeddedResource Include="Views\Email\AccessRequest.cshtml" />
+    <EmbeddedResource Include="Views\Email\AccountCreate.cshtml" />
+    <EmbeddedResource Include="Views\Email\ContactUs.cshtml" />
+    <EmbeddedResource Include="Views\Email\TaskAssign.cshtml" />
+    <EmbeddedResource Include="Views\Email\TaskDelete.cshtml" />
+    <EmbeddedResource Include="Views\Email\TaskReassign.cshtml" />
+    <None Include="app.config" />
+    <None Include="Domain\Repository\RepositoryModel.cd" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Views\Email\ProductStatusChange.cshtml" />
+    <EmbeddedResource Include="Views\Email\ProjectCreate.cshtml" />
+    <EmbeddedResource Include="Views\Email\NewCompanyCreate.cshtml" />
+    <EmbeddedResource Include="Views\Email\ProjectAssigned.cshtml" />
+    <EmbeddedResource Include="Views\Email\ProjectAssignedNewHandler.cshtml" />
+    <EmbeddedResource Include="Views\Email\TaskComplete.cshtml" />
+    <EmbeddedResource Include="Views\Email\ProjectCompleted.cshtml" />
+    <EmbeddedResource Include="Views\Email\ProjectOrderOwnerReassigned.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\UL.Aria.Common\UL.Aria.Common.csproj">
+      <Project>{3c34edd0-e5d4-40a0-bfc1-b1ad4e218232}</Project>
+      <Name>UL.Aria.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\UL.Iam.Common\UL.Iam.Common.csproj">
+      <Project>{ebc56575-5899-4017-aead-d4c215f85437}</Project>
+      <Name>UL.Iam.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UL.Aria.Service.Claim\UL.Aria.Service.Claim.csproj">
+      <Project>{7d60c5d7-14ca-4e93-a506-ae80167278f0}</Project>
+      <Name>UL.Aria.Service.Claim</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UL.Aria.Service.Contracts\UL.Aria.Service.Contracts.csproj">
+      <Project>{d85695b2-7db0-410d-b9d2-1e72890171ea}</Project>
+      <Name>UL.Aria.Service.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Email\logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Email\TaskCompleted.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Email\TaskCompletedLabel.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

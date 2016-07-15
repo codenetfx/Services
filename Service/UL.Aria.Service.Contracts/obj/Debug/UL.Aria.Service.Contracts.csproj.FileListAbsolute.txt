@@ -1,0 +1,7 @@
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\bin\Debug\UL.Aria.Service.Contracts.XML
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\bin\Debug\UL.Aria.Service.Contracts.dll
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\bin\Debug\UL.Aria.Service.Contracts.pdb
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\bin\Debug\UL.Aria.Service.Contracts.dll.CodeAnalysisLog.xml
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\bin\Debug\UL.Aria.Service.Contracts.dll.lastcodeanalysissucceeded
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\obj\Debug\UL.Aria.Service.Contracts.dll
+E:\DevNewBranch\1.12.1404x\System\Source\Service\UL.Aria.Service.Contracts\obj\Debug\UL.Aria.Service.Contracts.pdb

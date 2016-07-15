@@ -1,0 +1,1152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.InboundOrderProcessing</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage">
+            <summary>
+                A class defining data for order messages received from other systems.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.MessageId">
+            <summary>
+            Gets or sets the message identifier.
+            </summary>
+            <value>The message identifier.</value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.Body">
+            <summary>
+                Gets or sets the message body.
+            </summary>
+            <value>
+                The message body.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.Originator">
+            <summary>
+                Gets or sets the message originator.
+            </summary>
+            <value>
+                The originator.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.Receiver">
+            <summary>
+                Gets or sets the receiver.
+            </summary>
+            <value>
+                The receiver.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.ExternalMessageId">
+            <summary>
+                Gets or sets the id.
+            </summary>
+            <value>
+                The id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage.Properties">
+            <summary>
+                The properties as a list of key value pairs.
+            </summary>
+            <remarks>
+                This is <em>not</em> intended to be a dictionary as there may be more than one instance of a given property.
+            </remarks>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds">
+            <summary>
+            Class MessageIds.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingMessageReceived">
+            <summary>
+            The inbound order processing message received
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingMessageException">
+            <summary>
+            The inbound order processing message exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingProcessException">
+            <summary>
+            The inbound order processing process exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingProcessException_Unable_To_Add_ServiceLine">
+            <summary>
+            The inbound order processing process exception_ unable_ to_ add_ service line
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingProcessException_Unable_To_Add_LocationCode">
+            <summary>
+            The inbound order processing process exception_ unable_ to_ add_ location code
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingProcessException_Unable_To_Add_IndustryCode">
+            <summary>
+            The inbound order processing process exception_ unable_ to_ add_ industry code
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestParsed">
+            <summary>
+                The buy message request parsed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestCompanyFound">
+            <summary>
+                The buy message request company found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestCompanyNotFound">
+            <summary>
+                The buy message request company not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestCompanyCreated">
+            <summary>
+                The buy message request company created
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestIndustryCodeFound">
+            <summary>
+                The buy message request industry code found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestIndustryCodeNotFound">
+            <summary>
+                The buy message request industry code not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestIndustryCodeCreated">
+            <summary>
+                The buy message request industry code created
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestIndustryCodeUpdated">
+            <summary>
+                The buy message request industry code updated
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestServiceCodeFound">
+            <summary>
+                The buy message request service code found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestServiceCodeNotFound">
+            <summary>
+                The buy message request service code not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestServiceCodeCreated">
+            <summary>
+                The buy message request service code created
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestServiceCodeUpdated">
+            <summary>
+                The buy message request service code updated
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestLocationCodeFound">
+            <summary>
+                The buy message request location code found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestLocationCodeNotFound">
+            <summary>
+                The buy message request location code not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestLocationCodeCreated">
+            <summary>
+                The buy message request location code created
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestLocationCodeUpdated">
+            <summary>
+                The buy message request location code updated
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestValidationPassed">
+            <summary>
+                The buy message request validation passed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestValidationFailed">
+            <summary>
+                The buy message request validation failed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestFound">
+            <summary>
+                The buy message request found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageRequestNotFound">
+            <summary>
+                The buy message request not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderParsed">
+            <summary>
+                The buy message order parsed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderCompanyFound">
+            <summary>
+                The buy message order company found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderCompanyNotFound">
+            <summary>
+                The buy message order company not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderValidationPassed">
+            <summary>
+                The buy message order validation passed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderValidationFailed">
+            <summary>
+                The buy message order validation failed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderFound">
+            <summary>
+                The buy message order found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderNotFound">
+            <summary>
+                The buy message order not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderCreated">
+            <summary>
+                The buy message order created
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderUpdated">
+            <summary>
+                The buy message order updated
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageCustomerParsed">
+            <summary>
+                The buy message customer parsed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderServiceLineDetailParsed">
+            <summary>
+                The buy message order service line detail parsed
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingDequeueCountExceeded">
+            <summary>
+            The inbound order processing dequeue count exceeded
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingProcessOrderMessageException">
+            <summary>
+            The inbound order processing process order message exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingCleanupNewException">
+            <summary>
+            The inbound order processing cleanup new exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingCleanupFailedException">
+            <summary>
+            The inbound order processing cleanup failed exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingCleanupOrderMessagesException">
+            <summary>
+            The inbound order processing cleanup order messages exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingBuyMessageOrderMissingCompany">
+            <summary>
+            The inbound order processing buy message order missing company
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Logging.MessageIds.InboundOrderProcessingWorkerRoleException">
+            <summary>
+            The inbound order processing worker role exception
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Manager.IInboundMessageWebJobManager">
+            <summary>
+            Interface IInboundMessageWebJobManager
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Manager.IInboundMessageWebJobManager.Process(UL.Aria.Service.Contracts.Dto.InboundMessageDto,System.String)">
+            <summary>
+            Processes the specified inbound message.
+            </summary>
+            <param name="inboundMessage">The inbound message.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageWebJobManager">
+            <summary>
+                class to manage the whole process of retrieving a message from the Provider, Parsing and Publishing it as a project
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageWebJobManager.#ctor(UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.InboundOrderProcessing.Resolver.IMessageProcessorResolver,UL.Aria.Common.BusinessMessage.IBusinessMessageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager"/> class.
+            </summary>
+            <param name="logManager">The log manager.</param>
+            <param name="messageProcessorResolver">The message processor resolve.</param>
+            <param name="businessMessageProvider">The business message provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageWebJobManager.Process(UL.Aria.Service.Contracts.Dto.InboundMessageDto,System.String)">
+            <summary>
+            Processes this instance.
+            </summary>
+            <param name="inboundMessage">The inbound message.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.ContactProcessor">
+            <summary>
+                Implements operations for contacts for an <see cref="T:UL.Aria.Service.Contracts.Dto.IncomingOrderDto">incoming order</see>.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.IContactProcessor">
+            <summary>
+                Defines operations for contacts for an <see cref="T:UL.Aria.Service.Contracts.Dto.IncomingOrderDto">incoming order</see>.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.IContactProcessor.Process(UL.Aria.Service.Contracts.Dto.ContactOrderDto)">
+            <summary>
+            Processes the contacts.
+            </summary>
+            <param name="contactOrder">The contact order.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.ContactProcessor.#ctor(UL.Aria.Service.Contracts.Service.ICustomerPartyService,UL.Aria.Service.Provider.IIncomingOrderProvider,UL.Aria.Service.Provider.IProjectProvider,UL.Enterprise.Foundation.Data.ITransactionFactory,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Enterprise.Foundation.Logging.ILogManager)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.ContactProcessor"/> class.
+            </summary>
+            <param name="customerPartyService">The customer party service.</param>
+            <param name="incomingOrderProvider">The incoming order provider.</param>
+            <param name="projectProvider">The project provider.</param>
+            <param name="transactionFactory">The transaction factory.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="logManager">The log manager.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.ContactProcessor.Process(UL.Aria.Service.Contracts.Dto.ContactOrderDto)">
+            <summary>
+            Processes the contacts.
+            </summary>
+            <param name="contactOrder">The contact order.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.ContactProcessor.Execute(UL.Aria.Service.Contracts.Dto.ContactOrderDto,System.Action)">
+            <summary>
+            Executes the specified incoming order dto.
+            </summary>
+            <param name="contactOrder">The contact order.</param>
+            <param name="action">The action.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.CustomerMessageProcessor">
+            <summary>
+            Processor for customer messages.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase">
+            <summary>
+                Class MessageProcessorBase.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.#ctor(UL.Aria.Common.BusinessMessage.IBusinessMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver,UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Enterprise.Foundation.Logging.ILogManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase"/> class.
+            </summary>
+            <param name="businessMessageProvider">The business message provider.</param>
+            <param name="validatorResolver">The validator resolver.</param>
+            <param name="xmlParserResolver">The XML parser resolver.</param>
+            <param name="logManager">The log manager.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.Validate(System.Object)">
+            <summary>
+                Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>IDictionary{System.StringSystem.String}.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.Parse(System.String)">
+            <summary>
+                Parses the specified XML.
+            </summary>
+            <param name="xml">The XML.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.LogMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage,System.Object,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+                Logs the message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="dto">The dto.</param>
+            <param name="errors">The errors.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.LogInfoMessage(System.Int32,System.String,UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage,UL.Aria.Service.Contracts.Dto.IncomingOrderDto,UL.Aria.Service.Contracts.Dto.IncomingOrderServiceLineDto)">
+            <summary>
+            Logs the information message.
+            </summary>
+            <param name="messageId">The message identifier.</param>
+            <param name="message">The message.</param>
+            <param name="orderMessage">The order message.</param>
+            <param name="incomingOrderDto">The incoming order dto.</param>
+            <param name="serviceLine">The service line.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.LogVerboseMessage(System.Int32,System.String,UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage,UL.Aria.Service.Contracts.Dto.IncomingOrderDto,UL.Aria.Service.Contracts.Dto.IncomingOrderServiceLineDto)">
+            <summary>
+            Logs the verbose message.
+            </summary>
+            <param name="messageId">The message identifier.</param>
+            <param name="message">The message.</param>
+            <param name="orderMessage">The order message.</param>
+            <param name="incomingOrderDto">The incoming order dto.</param>
+            <param name="serviceLine">The service line.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.LogMessage(System.Int32,System.String,UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage,UL.Aria.Service.Contracts.Dto.IncomingOrderDto,System.Diagnostics.TraceEventType,UL.Aria.Service.Contracts.Dto.IncomingOrderServiceLineDto)">
+            <summary>
+            Logs the message.
+            </summary>
+            <param name="messageId">The message identifier.</param>
+            <param name="message">The message.</param>
+            <param name="orderMessage">The order message.</param>
+            <param name="incomingOrderDto">The incoming order dto.</param>
+            <param name="traceEventType">Type of the trace event.</param>
+            <param name="serviceLine">The service line.</param>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.Name">
+            <summary>
+                Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessageProcessorBase.LogMessageExtendedProperties">
+            <summary>
+                Gets or sets the log message extended properties.
+            </summary>
+            <value>The log message extended properties.</value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.IMessageProcessor">
+            <summary>
+                Interface IMessageProcessor
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.IMessageProcessor.ProcessMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Processes the message.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.CustomerMessageProcessor.#ctor(UL.Aria.Common.BusinessMessage.IBusinessMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver,UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Aria.Service.Provider.IIncomingOrderProvider,UL.Aria.Service.Provider.IProjectProvider,UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.Provider.IInboundMessageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.CustomerMessageProcessor"/> class.
+            </summary>
+            <param name="businessMessageProvider">The business message provider.</param>
+            <param name="validatorResolver">The validator resolver.</param>
+            <param name="xmlParserResolver">The XML parser resolver.</param>
+            <param name="incomingOrderProvider">The incoming order provider.</param>
+            <param name="projectProvider">The project provider.</param>
+            <param name="logManager">The log manager.</param>
+            <param name="inboundMessageProvider">The inbound message provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.CustomerMessageProcessor.ProcessMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+            Processes the message.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.CustomerMessageProcessor.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds">
+            <summary>
+            Message Ids for this assembly.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorIncomingOrderDatabaseItemNotFoundException">
+            <summary>
+            The incoming order database item not found exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorProjectsDatabaseItemNotFoundException">
+            <summary>
+            The projects database item not found exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorPartiesEndpointNotFoundException">
+            <summary>
+            The parties not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorPartiesDatabaseItemNotFoundException">
+            <summary>
+            The parties database item not found exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorPartiesNotFound">
+            <summary>
+            The contact processor parties not found
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorUnableToFillCustomer">
+            <summary>
+            The contact processor unable to fill customer
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorUnableToFillAgent">
+            <summary>
+            The contact processor unable to fill agent
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorPartiesFaultException">
+            <summary>
+            The contact processor parties fault exception
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.MessagesIds.ContactProcessorPartiesGeneralException">
+            <summary>
+            The contact processor parties exception
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderServiceLineDetailMessageProcessor">
+            <summary>
+                Class OrderServiceLineDetailMessageProcessor. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderServiceLineDetailMessageProcessor.#ctor(UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Aria.Service.Provider.IOrderProvider,UL.Aria.Service.Provider.IOrderServiceLineDetailProvider,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Aria.Common.BusinessMessage.IBusinessMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver,UL.Aria.Service.InboundOrderProcessing.Service.IProxyConfigurationSource,UL.Aria.Service.Provider.ISenderProvider,UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.Provider.IInboundMessageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderServiceLineDetailMessageProcessor"/> class.
+            </summary>
+            <param name="xmlParserResolver">The XML parser resolver.</param>
+            <param name="orderProvider">The order provider.</param>
+            <param name="orderServiceLineDetailProvider">The order service line detail provider.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="businessMessageProvider">The business message provider.</param>
+            <param name="validatorResolver">The validator resolver.</param>
+            <param name="proxyConfigurationSource">The proxy configuration source.</param>
+            <param name="senderProvider">The sender provider.</param>
+            <param name="logManager">The log manager.</param>
+            <param name="inboundMessageProvider">The inbound message provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderServiceLineDetailMessageProcessor.ProcessMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Processes the message.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderServiceLineDetailMessageProcessor.Name">
+            <summary>
+                Gets the name of the validator.
+            </summary>
+            <value>The name of the validator.</value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver">
+            <summary>
+                Interface IXmlParserResolver
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IXmlParser.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.XmlParserResolver">
+            <summary>
+                Class XmlParserResolver. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.XmlParserResolver.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Resolver.XmlParserResolver"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.XmlParserResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IXmlParser.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver">
+            <summary>
+                Interface IValidatorResolver
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IValidator.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.ValidatorResolver">
+            <summary>
+                Class ValidatorResolver.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.ValidatorResolver.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Resolver.ValidatorResolver"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.ValidatorResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IValidator.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.IMessageProcessorResolver">
+            <summary>
+                Interface IMessageProcessorResolver
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.IMessageProcessorResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IMessageProcessor.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager">
+            <summary>
+                class to manage the whole process of retrieving a message from the Provider, Parsing and Publishing it as a project
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager.#ctor(UL.Enterprise.Foundation.Data.ITransactionFactory,UL.Aria.Service.InboundOrderProcessing.Provider.IInboundOrderProvider,UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.InboundOrderProcessing.Resolver.IMessageProcessorResolver,UL.Aria.Common.BusinessMessage.IBusinessMessageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager"/> class.
+            </summary>
+            <param name="transactionFactory">The transaction factory.</param>
+            <param name="inboundOrderProvider">The inbound order provider.</param>
+            <param name="logManager">The log manager.</param>
+            <param name="messageProcessorResolver">The message processor resolve.</param>
+            <param name="businessMessageProvider">The business message provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager.Process(System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Processes this instance.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager.MilliSecondsTimeout">
+            <summary>
+                Gets or sets the milli seconds timeout.
+            </summary>
+            <value>
+                The milli seconds timeout.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager.ErrorCount">
+            <summary>
+                Gets or sets the error count.
+            </summary>
+            <value>The error count.</value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Manager.InboundMessageManager.ProcessDelay">
+            <summary>
+            Gets the process delay.
+            </summary>
+            <value>The process delay.</value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor">
+            <summary>
+                Class OrderMessageProcessor.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor.#ctor(UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Aria.Service.Provider.ICompanyProvider,UL.Aria.Service.Provider.IOrderProvider,UL.Aria.Common.BusinessMessage.IBusinessMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver,UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.Manager.IProjectManager,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Aria.Service.Provider.IInboundMessageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor"/> class.
+            </summary>
+            <param name="xmlParserResolver">The XML parser resolver.</param>
+            <param name="companyProvider">The company provider.</param>
+            <param name="orderProvider">The order provider.</param>
+            <param name="businessMessageProvider">The business message provider.</param>
+            <param name="validatorResolver">The validator resolver.</param>
+            <param name="logManager">The log manager.</param>
+            <param name="projectManager">The project manager.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="inboundMessageProvider">The inbound message provider.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor.ProcessMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Processes the message.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor.Name">
+            <summary>
+                Gets the name of the validator.
+            </summary>
+            <value>The name of the validator.</value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.RequestMessageProcessor">
+            <summary>
+                Class RequestMessageProcessor.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.RequestMessageProcessor.#ctor(UL.Aria.Service.InboundOrderProcessing.Resolver.IXmlParserResolver,UL.Aria.Service.Provider.ICompanyProvider,UL.Aria.Service.Provider.IIncomingOrderProvider,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Aria.Common.BusinessMessage.IBusinessMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IValidatorResolver,UL.Aria.Service.Provider.IIndustryCodeProvider,UL.Aria.Service.Provider.IServiceCodeProvider,UL.Aria.Service.Provider.ILocationCodeProvider,UL.Enterprise.Foundation.Logging.ILogManager,UL.Aria.Service.Provider.IInboundMessageProvider,UL.Aria.Service.InboundOrderProcessing.Resolver.IMessageProcessorResolver,UL.Aria.Service.Provider.IContactOrderProvider,UL.Enterprise.Foundation.Data.ITransactionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.OrderMessageProcessor"/> class.
+            </summary>
+            <param name="xmlParserResolver">The XML parser resolver.</param>
+            <param name="companyProvider">The company provider.</param>
+            <param name="incomingOrderProvider">The incoming order provider.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="businessMessageProvider">The business message provider.</param>
+            <param name="validatorResolver">The validator resolver.</param>
+            <param name="industryCodeProvider">The industry code provider.</param>
+            <param name="serviceCodeProvider">The service code provider.</param>
+            <param name="locationCodeProvider">The location code provider.</param>
+            <param name="logManager">The log manager.</param>
+            <param name="inboundMessageProvider">The inbound message provider.</param>
+            <param name="messageProcessorResolver">The message processor resolver.</param>
+            <param name="contactOrderProvider">The contact order provider.</param>
+            <param name="transactionFactory">The transaction factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.RequestMessageProcessor.ProcessMessage(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Processes the message.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.MessageProcessor.RequestMessageProcessor.Name">
+            <summary>
+                Gets the name of the validator.
+            </summary>
+            <value>The name of the validator.</value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Resolver.MessageProcessorResolver">
+            <summary>
+                Class MessageProcessorResolver.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.MessageProcessorResolver.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Resolver.MessageProcessorResolver"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Resolver.MessageProcessorResolver.Resolve(System.String)">
+            <summary>
+                Resolves the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>IMessageProcessor.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider">
+            <summary>
+                Basic Instance Manager that uses Unity for dependency injection.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider.Create">
+            <summary>
+                Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider.SetupContactOrderMessage(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Setups the contact order message.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.UnityInstanceProvider.Container">
+            <summary>
+                Gets the container.
+            </summary>
+            <value>
+                The container.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.CustomerOrganizationValidator">
+            <summary>
+            Validator for customer related messages.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.IValidator">
+            <summary>
+                Interface IValidator
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.IValidator.Validate(System.Object)">
+            <summary>
+                Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>IDictionary{System.StringSystem.String}.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.CustomerOrganizationValidator.Validate(System.Object)">
+            <summary>
+            Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>
+            IDictionary{System.StringSystem.String}.
+            </returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.OrderServiceLineDetailValidator">
+            <summary>
+                Class OrderServiceLineDetailValidator. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.ValidatorBase">
+            <summary>
+                Class ValidatorBase.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.ValidatorBase.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Validator.ValidatorBase"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Validator.ValidatorBase.Errors">
+            <summary>
+                Gets or sets the errors.
+            </summary>
+            <value>The errors.</value>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.OrderServiceLineDetailValidator.Validate(System.Object)">
+            <summary>
+                Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>IDictionary{System.StringSystem.String}.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Provider.IInboundOrderProvider">
+            <summary>
+            Defines a provider for Order Messages.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Provider.IInboundOrderProvider.Enqueue(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Enqueues the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Provider.IInboundOrderProvider.Dequeue">
+            <summary>
+                Dequeues the top message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider">
+            <summary>
+            Implements a message provider.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider._inboundOrderRepository">
+            <summary>
+            The _order message repository
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider.#ctor(UL.Aria.Service.InboundOrderProcessing.Repository.IInboundOrderRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider"/> class.
+            </summary>
+            <param name="inboundOrderRepository">The inbound order repository.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider.Enqueue(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+            Enqueues the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Provider.InboundOrderProvider.Dequeue">
+            <summary>
+            Dequeues the top message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Repository.IInboundOrderRepository">
+            <summary>
+            Defines operations for order message repository.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.IInboundOrderRepository.Create(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+            Creates the specified x
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.IInboundOrderRepository.FetchById(System.Guid)">
+            <summary>
+            Fetches an <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.IInboundOrderRepository.FetchNextForProcessing">
+            <summary>
+            Fetches the next <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> for processing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Repository.InboundOrderRepository">
+            <summary>
+                Stores and retrieves <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> objects from a SQL database.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.InboundOrderRepository.Create(UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage)">
+            <summary>
+                Creates the specified <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> record.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.InboundOrderRepository.FetchById(System.Guid)">
+            <summary>
+                Fetches an <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Repository.InboundOrderRepository.FetchNextForProcessing">
+            <summary>
+                Fetches the next <see cref="T:UL.Aria.Service.InboundOrderProcessing.Domain.OrderMessage"/> for processing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Service.IProxyConfigurationSource">
+            <summary>
+            Configuration Options for service proxies.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.IProxyConfigurationSource.StoreOriginalXml">
+            <summary>
+            Gets a value indicating whether [store original XML].
+            </summary>
+            <value><c>true</c> if [store original XML]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.IProxyConfigurationSource.NewOrderService">
+            <summary>
+            Gets the order message service.
+            </summary>
+            <value>
+            The order message service.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1">
+            <summary>
+                Wrapper around WebChannelFactory to clean up after a channel faults
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1._proxyLock">
+            <summary>
+                The _proxy lock
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1._serviceProxyFactory">
+            <summary>
+                The _service proxy factory
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1.#ctor(System.ServiceModel.ChannelFactory{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1.RetrieveManagedProxy">
+            <summary>
+                Retrieves the managed proxy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1.CloseManagedProxy">
+            <summary>
+                Closes the managed proxy.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1.InitializeProxy">
+            <summary>
+                Initializes the proxy.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ServiceAgentManagedProxy`1.ClientProxy">
+            <summary>
+                Gets or sets the client proxy.
+            </summary>
+            <value>
+                The client proxy.
+            </value>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.#ctor(UL.Aria.Service.InboundOrderProcessing.Service.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IIncomingOrderService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.Create(UL.Aria.Service.Contracts.Dto.IncomingOrderDto)">
+            <summary>
+            Creates the specified new order.
+            </summary>
+            <param name="newOrder">The new order.</param>
+            <returns>
+            Guid.
+            </returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.Update(System.String,UL.Aria.Service.Contracts.Dto.IncomingOrderDto)">
+            <summary>
+            Updates the specified new order id.
+            </summary>
+            <param name="newOrderId">The new order id.</param>
+            <param name="newOrder">The new order.</param>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.Search(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Search based on the provided criteria.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.PublishProjectCreationRequest(UL.Aria.Service.Contracts.Dto.ProjectCreationRequestDto)">
+            <summary>
+            Creates the project from the specified new order.
+            </summary>
+            <param name="projectCreationRequest">The project creation request.</param>
+            <returns>Guid.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.Fetch(System.String)">
+            <summary>
+            Fetches the specified <see cref="T:UL.Aria.Service.Contracts.Dto.IncomingOrderDto"/>.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.InboundOrderServiceProxy.FetchByServiceLine(System.String)">
+            <summary>
+            Fetches the by service line.
+            </summary>
+            <param name="serviceLineId">The service line id.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource">
+            <summary>
+                Configuration Options for service proxies.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.StoreOriginalXml">
+            <summary>
+                Gets a value indicating whether [store original XML].
+            </summary>
+            <value><c>true</c> if [store original XML]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.NewOrderService">
+            <summary>
+                Gets the order message service.
+            </summary>
+            <value>
+                The order message service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.TokenProvider">
+            <summary>
+            Gets the token provider.
+            </summary>
+            <value>
+            The token provider.
+            </value>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.CustomerPartyServiceUri">
+            <summary>
+            Gets or sets the customer party service URI.
+            </summary>
+            <value>
+            The customer party service URI.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.InboundOrderProcessing.Service.ProxyConfigurationSource.CustomerPartyServiceBinding">
+            <summary>
+            Gets or sets the customer party service binding.
+            </summary>
+            <value>
+            The customer party service binding.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.OrderValidator">
+            <summary>
+                Class OrderValidator.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.RequestValidator">
+            <summary>
+                Class RequestValidator.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.RequestValidator.Validate(System.Object)">
+            <summary>
+                Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>IDictionary{System.StringSystem.String}.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.OrderValidator.Validate(System.Object)">
+            <summary>
+                Validates the specified dto.
+            </summary>
+            <param name="dto">The dto.</param>
+            <returns>IDictionary{System.StringSystem.String}.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.InboundOrderProcessing.Validator.StringUtility">
+            <summary>
+                Class StringUtility.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.InboundOrderProcessing.Validator.StringUtility.HasValue(System.String)">
+            <summary>
+                Determines whether the specified value has value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
+        </member>
+    </members>
+</doc>

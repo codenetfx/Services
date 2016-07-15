@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.OutboundMessage.Host</name>
+    </assembly>
+    <members>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller">
+            <summary>
+            Installer for host components.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller"/> class.
+            </summary>
+        </member>
+        <member name="F:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource">
+            <summary>
+            Implementation of proxy configuration.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource.MessageServiceUri">
+            <summary>
+            Gets the message service URI.
+            </summary>
+            <value>
+            The message service URI.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource.TokenProvider">
+            <summary>
+            Gets the token provider.
+            </summary>
+            <value>
+            The token provider.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.OutboundMessage.Host.ProxyConfigurationSource.MessageServiceBinding">
+            <summary>
+            Gets or sets the message service binding.
+            </summary>
+            <value>
+            The message service binding.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider"/> class.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider.Resolve``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider.Dispose(System.Boolean)">
+            <summary>
+              Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"> <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources. </param>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider.Create">
+            <summary>
+                Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UL.Aria.Service.OutboundMessage.Host.UnityInstanceProvider.Container">
+            <summary>
+                Gets the container.
+            </summary>
+            <value>
+                The container.
+            </value>
+        </member>
+    </members>
+</doc>

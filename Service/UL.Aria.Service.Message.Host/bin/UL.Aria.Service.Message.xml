@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Message</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Message.Common.LogCategoryResolver">
+            <summary>
+             Resolves a log category based on entity which is the focus of the log message being created.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Common.LogCategoryResolver.GetCategory(System.Type)">
+            <summary>
+            Gets the category.
+            </summary>
+            <param name="entity">The entity to use to resolve the log entry category.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Domain.OrderMessage">
+            <summary>
+                A class defining data for order messages received from other systems.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Domain.OrderMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Domain.OrderMessage.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> class.
+            </summary>
+            <param name="id">The id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Domain.OrderMessage.#ctor(System.Nullable{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> class.
+            </summary>
+            <param name="id">The id.</param>
+        </member>
+        <member name="P:UL.Aria.Service.Message.Domain.OrderMessage.Body">
+            <summary>
+                Gets or sets the message body.
+            </summary>
+            <value>
+                The message body.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Message.Domain.OrderMessage.Originator">
+            <summary>
+                Gets or sets the message originator.
+            </summary>
+            <value>
+                The originator.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Message.Domain.OrderMessage.Receiver">
+            <summary>
+                Gets or sets the receiver.
+            </summary>
+            <value>
+                The receiver.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Message.Domain.OrderMessage.ExternalMessageId">
+            <summary>
+                Gets or sets the id.
+            </summary>
+            <value>
+                The id.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Message.Domain.OrderMessage.Properties">
+            <summary>
+                The properties as a list of key value pairs.
+            </summary>
+            <remarks>
+                This is <em>not</em> intended to be a dictionary as there may be more than one instance of a given property.
+            </remarks>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Implementation.OrderMessageService">
+            <summary>
+                Implements the <see cref="T:UL.Aria.Service.Contracts.Service.IOrderMessageService"/> interface.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Implementation.OrderMessageService.#ctor(UL.Aria.Service.Message.Provider.IOrderMessageProvider,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Enterprise.Foundation.Logging.ILogManager)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Implementation.OrderMessageService"/> class.
+            </summary>
+            <param name="orderMessageProvider">The order message provider.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="logManager">The log manager.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Implementation.OrderMessageService.Enqueue(UL.Aria.Service.Contracts.Dto.OrderMessageDto)">
+            <summary>
+                Enqueues the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Implementation.OrderMessageService.Dequeue">
+            <summary>
+                Dequeues the top message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Implementation.OrderMessageService.Ping(System.String)">
+            <summary>
+                Pings the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Implementation.ServiceMapperRegistry">
+            <summary>
+            Host project mapper registry class.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Implementation.ServiceMapperRegistry.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Implementation.ServiceMapperRegistry"/> class.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Repository.IOrderMessageRepository">
+            <summary>
+            Defines operations for order message repository.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.IOrderMessageRepository.Create(UL.Aria.Service.Message.Domain.OrderMessage)">
+            <summary>
+            Creates the specified x
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.IOrderMessageRepository.FetchById(System.Guid)">
+            <summary>
+            Fetches an <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.IOrderMessageRepository.FetchNextForProcessing">
+            <summary>
+            Fetches the next <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> for processing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Repository.OrderMessageRepository">
+            <summary>
+                Stores and retrieves <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> objects from a SQL database.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.OrderMessageRepository.Create(UL.Aria.Service.Message.Domain.OrderMessage)">
+            <summary>
+                Creates the specified <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> record.
+            </summary>
+            <param name="orderMessage">The order message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.OrderMessageRepository.FetchById(System.Guid)">
+            <summary>
+                Fetches an <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Repository.OrderMessageRepository.FetchNextForProcessing">
+            <summary>
+                Fetches the next <see cref="T:UL.Aria.Service.Message.Domain.OrderMessage"/> for processing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Provider.IOrderMessageProvider">
+            <summary>
+            Defines a provider for Order Messages.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Provider.IOrderMessageProvider.Enqueue(UL.Aria.Service.Message.Domain.OrderMessage)">
+            <summary>
+                Enqueues the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Provider.IOrderMessageProvider.Dequeue">
+            <summary>
+                Dequeues the top message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Message.Provider.OrderMessageProvider">
+            <summary>
+                Implements a message provider.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Provider.OrderMessageProvider.#ctor(UL.Aria.Service.Message.Repository.IOrderMessageRepository)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Message.Provider.OrderMessageProvider"/> class.
+            </summary>
+            <param name="orderMessageRepository">The order message repository.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Provider.OrderMessageProvider.Enqueue(UL.Aria.Service.Message.Domain.OrderMessage)">
+            <summary>
+                Enqueues the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Message.Provider.OrderMessageProvider.Dequeue">
+            <summary>
+                Dequeues the top message.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

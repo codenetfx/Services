@@ -1,0 +1,1166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UL.Aria.Service.Relay</name>
+    </assembly>
+    <members>
+        <member name="T:UL.Aria.Service.Relay.Common.LocalPrincipalResolver">
+            <summary>
+            Implements <see cref="T:UL.Enterprise.Foundation.Authorization.IPrincipalResolver"/> for non-http contexts.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Common.LocalPrincipalResolver.Current">
+            <summary>
+            Gets or sets the current.
+            </summary>
+            <value>
+            The current.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Common.LocalPrincipalResolver.UserId">
+            <summary>
+            Gets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Common.ServiceMapperRegistry">
+            <summary>
+            Mapper registry for <see cref="N:UL.Aria.Service.Relay"/>
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Common.ServiceMapperRegistry.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Common.ServiceMapperRegistry"/> class.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1">
+            <summary>
+            Internal Entity for returning <see cref="T:UL.Aria.Service.Contracts.Dto.SearchResultSetDto"/> objects.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1.Results">
+            <summary>
+            Gets or sets the results.
+            </summary>
+            <value>
+            The results.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1.RefinerResults">
+            <summary>
+            Gets or sets the refiner results.
+            </summary>
+            <value>
+            The refiner results.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Domain.RelaySearchResultSet`1.Summary">
+            <summary>
+            Gets or sets the total results.
+            </summary>
+            <value>
+            The total results.
+            </value>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IRelayDocumentContentServiceProxy">
+            <summary>
+            Interface IRelayDocumentContentServiceProxy
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayDocumentContentServiceProxy.Save(System.String,System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="metadata">The metadata.</param>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy">
+            <summary>
+            Class RelayDocumentContentServiceProxy.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IDocumentContentService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentContentServiceProxy.Save(System.String,System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="metadata">The metadata.</param>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayDocumentManager">
+            <summary>
+            Class RelayDocumentManager. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IRelayDocumentManager">
+            <summary>
+            Interface IRelayDocumentManager
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayDocumentManager.Save(System.String,System.Guid,System.String,System.IO.Stream)">
+            <summary>
+            Saves the specified identifier.
+            </summary>
+            <param name="metadata">The metadata.</param>
+            <param name="id">The identifier.</param>
+            <param name="contentType">Type of the content.</param>
+            <param name="stream">The stream.</param>
+            <returns>Document.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayDocumentManager.GetDocumentById(System.Guid)">
+            <summary>
+            Gets the document by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>Document.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayDocumentManager.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentManager.#ctor(UL.Aria.Service.Contracts.Service.IDocumentService,UL.Enterprise.Foundation.Mapper.IMapperRegistry,UL.Aria.Service.Relay.Manager.IRelayDocumentContentServiceProxy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayDocumentManager"/> class.
+            </summary>
+            <param name="documentService">The document service.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+            <param name="documentContentService">The document content service.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentManager.Save(System.String,System.Guid,System.String,System.IO.Stream)">
+            <summary>
+            Saves the specified identifier.
+            </summary>
+            <param name="metadata">The metadata.</param>
+            <param name="id">The identifier.</param>
+            <param name="contentType">Type of the content.</param>
+            <param name="stream">The stream.</param>
+            <returns>Document.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentManager.GetDocumentById(System.Guid)">
+            <summary>
+            Gets the document by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>Document.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentManager.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy">
+            <summary>
+            Class RelayDocumentServiceProxy.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IDocumentService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Create(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Creates the specified container identifier.
+            </summary>
+            <param name="containerId">The container identifier.</param>
+            <param name="metaData">The meta data.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Update(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Updates the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="metaData">The meta data.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.FetchById(System.String)">
+            <summary>
+            Fetches the by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>IDictionary&lt;System.String, System.String&gt;.</returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Delete(System.String)">
+            <summary>
+            Deletes the document with the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.FetchDocumentById(System.String)">
+            <summary>
+            Fetches the document by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>DocumentDto.</returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Lock(System.String)">
+            <summary>
+            Locks the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayDocumentServiceProxy.Unlock(System.String)">
+            <summary>
+            Unlocks the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Service.RelayDocumentService">
+            <summary>
+            Class RelayDocumentService.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayDocumentService.#ctor(UL.Aria.Service.Relay.Manager.IRelayDocumentManager,UL.Enterprise.Foundation.Mapper.IMapperRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Service.RelayDocumentService"/> class.
+            </summary>
+            <param name="relayDocumentManager">The relay document manager.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayDocumentService.Save(System.IO.Stream)">
+            <summary>
+            Saves the specified identifier.
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns>DocumentDto.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayDocumentService.GetDocumentById(System.String)">
+            <summary>
+            Gets the document by identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>DocumentDto.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayDocumentService.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.UnityRelayModule">
+            <summary>
+            unity boot module for the assembly.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.UnityRelayModule.Register(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Registers the specified unity container.
+            </summary>
+            <param name="unityContainer">The unity container.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.LogCategoryResolver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.LogCategoryResolver.GetCategory(System.Type)">
+            <summary>
+            Gets the category.
+            </summary>
+            <param name="entity">The entity to use to resolve the log entry category.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.ProductService">
+            <summary>
+            Gets the product service.
+            </summary>
+            <value>
+            The product service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.ProjectService">
+            <summary>
+            Gets the project service.
+            </summary>
+            <value>
+            The project service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.AriaService">
+            <summary>
+            Gets the aria service.
+            </summary>
+            <value>
+            The aria service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.ProfileService">
+            <summary>
+            Gets or sets the profile service.
+            </summary>
+            <value>
+            The profile service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.CompanyService">
+            <summary>
+            Gets or sets the company service.
+            </summary>
+            <value>
+            The company service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.DocumentService">
+            <summary>
+            Gets the document service.
+            </summary>
+            <value>The document service.</value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.IProxyConfigurationSource.DocumentContentService">
+            <summary>
+            Gets the document content service.
+            </summary>
+            <value>The document content service.</value>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IRelayCompanyManager">
+            <summary>
+            Definition of operations for a relay for companies.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayCompanyManager.FetchById(System.Guid)">
+            <summary>
+            Gets the company by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayCompanyManager.FetchByExternalId(System.String)">
+            <summary>
+            Fetches the by external identifier.
+            </summary>
+            <param name="externalId">The external identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IRelayProductManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProductManager.GetProductById(System.Guid)">
+            <summary>
+                Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.IRelayProjectManager">
+            <summary>
+            Defines operations for fetching project for internal UL services.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.GetProjectById(System.Guid)">
+            <summary>
+                Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.SearchProjects(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Searches the projects.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.GetAllProjectDocuments(System.Guid)">
+            <summary>
+            Fetches all documents.
+            </summary>
+            <param name="projectId">The project identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.FetchProfile(System.String)">
+            <summary>
+            Fetches the project handler.
+            </summary>
+            <param name="projectHandler">The project handler.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.IRelayProjectManager.SearchProjectTaskSummary(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Searches the project task summary.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource">
+            <summary>
+            Configuration information.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Object"/> class.
+            </summary>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.ProductService">
+            <summary>
+            Gets the product service.
+            </summary>
+            <value>
+            The product service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.ProjectService">
+            <summary>
+            Gets the project service.
+            </summary>
+            <value>
+            The project service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.AriaService">
+            <summary>
+            Gets the aria service.
+            </summary>
+            <value>
+            The aria service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.ProfileService">
+            <summary>
+            Gets or sets the profile service.
+            </summary>
+            <value>
+            The profile service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.CompanyService">
+            <summary>
+            Gets or sets the company service.
+            </summary>
+            <value>
+            The company service.
+            </value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.DocumentService">
+            <summary>
+            Gets the document service.
+            </summary>
+            <value>The document service.</value>
+        </member>
+        <member name="P:UL.Aria.Service.Relay.Manager.ProxyConfigurationSource.DocumentContentService">
+            <summary>
+            Gets the document content service.
+            </summary>
+            <value>The document content service.</value>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource,UL.Enterprise.Foundation.Authorization.IPrincipalResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+            <param name="principalResolver">The principal resolver.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IAriaService})">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Enterprise.Foundation.Client.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.FetchAllAssets(System.String)">
+            <summary>
+            Fetches all assets in a container.
+            </summary>
+            <param name="id">The id.</param>
+            <returns>
+            SearchResultSetDto.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.FetchAllDocuments(System.String)">
+            <summary>
+            Fetches the type of all assets of entity.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.Search(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Search based on the provided criteria.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.PublishFetchMetadata(System.String,System.String,System.String,System.String)">
+            <summary>
+            Publishes the fetchmetadata.
+            </summary>
+            <param name="entityType">The type of the entity the metadata is for.</param>
+            <param name="id">The id.</param>
+            <param name="assetType">The type of the entity asset the metadata is for.</param>
+            <param name="assetId">The asset id.</param>
+            <returns>
+            The metadata stream.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.PublishCreateMetadata(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Publishes the createmetdata.
+            </summary>
+            <param name="entityType">The type of the entity the metadata is for.</param>
+            <param name="id">The id.</param>
+            <param name="assetType">The type of the entity asset the metadata is for.</param>
+            <param name="metadataStream">The metadata stream.</param>
+            <returns>
+            The saved content id.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.PublishCreateProduct(System.String,System.String,UL.Aria.Service.Contracts.Dto.ProductDto)">
+            <summary>
+            Publishes the create product.
+            </summary>
+            <param name="newContainerId">The new container id.</param>
+            <param name="newAssetId">The new asset id.</param>
+            <param name="product">The product.</param>
+            <returns>
+            System.String.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.PublishUpdateMetadata(System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Publishes the updatemetdata.
+            </summary>
+            <param name="entityType">The type of the entity the metadata is for.</param>
+            <param name="id">The id.</param>
+            <param name="assetType">The type of the entity asset the metadata is for.</param>
+            <param name="assetId">The asset id.</param>
+            <param name="metadataStream">The metadata stream.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.PublishDeleteContent(System.String,System.String,System.String,System.String)">
+            <summary>
+            Deletes the content.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="entityId">The entity id.</param>
+            <param name="assetType">Type of the asset.</param>
+            <param name="assetId">The asset id.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.FetchAllContainers(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Fetches all by company id.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.GetAvailableUserClaims(System.String)">
+            <summary>
+            Gets the available, assignable claims for this container.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.CreateAssetLink(UL.Aria.Service.Contracts.Dto.AssetLinkDto)">
+            <summary>
+            Creates the asset link.
+            </summary>
+            <param name="assetLink">The asset link.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.DeleteAssetLink(UL.Aria.Service.Contracts.Dto.AssetLinkDto)">
+            <summary>
+            Deletes the asset link.
+            </summary>
+            <param name="assetLink">The asset link.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.FetchAssetLinks(System.String,System.String,System.String,System.String)">
+            <summary>
+            Fetches the asset links.
+            </summary>
+            <param name="parentAssetType">Type of the parent asset.</param>
+            <param name="parentAssetId">The parent asset id.</param>
+            <param name="assetType">Type of the asset.</param>
+            <param name="assetId">The asset id.</param>
+            <returns>
+            IList{System.String}.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayAriaServiceProxy.FetchParentAssetLinks(System.String)">
+            <summary>
+            Fetches the parent asset links.
+            </summary>
+            <param name="parentAssetId">The parent asset id.</param>
+            <returns>
+            IList{System.String}.
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayCompanyManager">
+            <summary>
+            <see cref="T:UL.Aria.Service.Relay.Manager.IRelayCompanyManager"/> implementation for companies.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyManager.#ctor(UL.Aria.Service.Contracts.Service.ICompanyService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayCompanyManager"/> class.
+            </summary>
+            <param name="companyService">The company service.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyManager.FetchById(System.Guid)">
+            <summary>
+            Gets the company by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyManager.FetchByExternalId(System.String)">
+            <summary>
+            Fetches the by external identifier.
+            </summary>
+            <param name="externalId">The external identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.ICompanyService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Enterprise.Foundation.Client.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.FetchAll">
+            <summary>
+            Gets the company by id.
+            </summary>
+            <returns>
+            Company Dto
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.Search(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Search based on the provided criteria.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.FetchById(System.String)">
+            <summary>
+            Gets the company by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns>
+            Company Dto
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.FetchByExternalId(System.String)">
+            <summary>
+            Gets the company by external id.
+            </summary>
+            <param name="externalId">The external id.</param>
+            <returns>
+            Company.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.Create(UL.Aria.Service.Contracts.Dto.CompanyDto)">
+            <summary>
+            Publishes the company.
+            </summary>
+            <param name="company">The company.</param>
+            <returns>
+            The published company
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.Update(UL.Aria.Service.Contracts.Dto.CompanyDto)">
+            <summary>
+            Updates the company.
+            </summary>
+            <param name="company">The company.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.Delete(System.String)">
+            <summary>
+            Deletes the company by id.
+            </summary>
+            <param name="id">The id.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.FetchAllCount">
+            <summary>
+            Fetches all count.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayCompanyServiceProxy.GetULCompanyId">
+            <summary>
+            Gets the ul company identifier.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayProductManager">
+            <summary>
+            Implements a <see cref="T:UL.Aria.Service.Relay.Manager.IRelayProductManager"/>
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductManager.#ctor(UL.Aria.Service.Contracts.Service.IProductService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProductManager"/> class.
+            </summary>
+            <param name="productServiceProxy">The product service.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductManager.GetProductById(System.Guid)">
+            <summary>
+            Gets the product by id.
+            </summary>
+            <param name="productId">The product unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy">
+            <summary>
+            Implements a proxy for <see cref="T:UL.Aria.Service.Contracts.Service.IProductService"/>
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IProductService})">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Enterprise.Foundation.Client.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.Create(UL.Aria.Service.Contracts.Dto.ProductDto)">
+            <summary>
+                Creates the specified product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.CreateFromUpload(UL.Aria.Service.Contracts.Dto.ProductUploadResultDto,System.String)">
+            <summary>
+                Creates the specified product.
+            </summary>
+            <param name="product">The product.</param>
+            <param name="uploadId">The upload id.</param>
+            <returns>
+                <c>true</c> if XXXX, <c>false</c> otherwise
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.Update(System.String,UL.Aria.Service.Contracts.Dto.ProductDto)">
+            <summary>
+                Updates the specified product.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.UpdateFromUpload(System.String,UL.Aria.Service.Contracts.Dto.ProductUploadResultDto,System.String)">
+            <summary>
+                Updates the specified product.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="product">The product.</param>
+            <param name="uploadId">The upload id.</param>
+            <returns>
+                <c>true</c> if XXXX, <c>false</c> otherwise
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.Delete(System.String)">
+            <summary>
+                Deletes the specified id.
+            </summary>
+            <param name="id">The id.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetProductById(System.String)">
+            <summary>
+                Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetProductDownloadById(System.String)">
+            <summary>
+                Gets the product's download by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetProductDownloadByProductFamilyId(System.String)">
+            <summary>
+                Gets the product's download by id.
+            </summary>
+            <param name="familyId">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.UploadUpdate(System.String,UL.Aria.Service.Contracts.Dto.ProductUploadDto)">
+            <summary>
+                Uploads the update.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="productUploadDto">The product upload dto.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.Upload(System.String,System.String,System.String,System.IO.Stream)">
+            <summary>
+                Uploads the specified products for a specified user id.
+            </summary>
+            <param name="userId">The user id.</param>
+            <param name="companyId">The company id.</param>
+            <param name="fileName"></param>
+            <param name="file">The file.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.FetchByUserId(System.String,System.Int64,System.Int64)">
+            <summary>
+                Fetches the product uploads by user id.
+            </summary>
+            <param name="userId">The user id.</param>
+            <param name="rowStartIndex">Start index of the row.</param>
+            <param name="rowEndIndex">End index of the row.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetByProductUploadId(System.String)">
+            <summary>
+                Gets the by product upload id.
+            </summary>
+            <param name="productUploadId">The product upload id.</param>
+            <returns>ProductUploadResultSearchResultSetDto.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetById(System.String)">
+            <summary>
+                Gets the by id.
+            </summary>
+            <param name="productUploadId">The product upload id.</param>
+            <returns>ProductUploadDto.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.GetProductDownloadByProductUploadId(System.String)">
+            <summary>
+                Gets the product download by product upload id.
+            </summary>
+            <param name="productUploadId">The product upload id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.ChangeStatus(System.String,System.String)">
+            <summary>
+                Changes the status.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy.ChangeStatusOverride(System.String,System.String)">
+            <summary>
+                Changes the status.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayProfileServiceProxy">
+            <summary>
+            Relay for <see cref="T:UL.Aria.Service.Contracts.Service.IProfileService"/>
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProfileServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProfileServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.ISimpleProfileService})">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Enterprise.Foundation.Client.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProfileServiceProxy.FetchByIdOrUserName(System.String)">
+            <summary>
+            Gets the profile by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns>
+            ProfileDto
+            </returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayProjectManager">
+            <summary>
+            Implements operations for <see cref="T:UL.Aria.Service.Relay.Manager.IRelayProjectManager"/>
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.#ctor(UL.Aria.Service.Contracts.Service.IProjectService,UL.Aria.Service.Contracts.Service.IAriaService,UL.Aria.Service.Contracts.Service.ISimpleProfileService,UL.Aria.Service.Relay.Manager.IRelayCompanyManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProjectManager"/> class.
+            </summary>
+            <param name="projectService">The project service.</param>
+            <param name="ariaService">The aria service.</param>
+            <param name="profileService">The profile service.</param>
+            <param name="relayCompanyManager">The company service.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.GetProjectById(System.Guid)">
+            <summary>
+            Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.FetchProfile(System.String)">
+            <summary>
+            Fetches the project handler.
+            </summary>
+            <param name="projectHandler">The project handler.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.SearchProjects(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Searches the projects.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.SearchProjectTaskSummary(UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+            Searches the project task summary.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.GetAllProjectDocuments(System.Guid)">
+            <summary>
+            Fetches all documents.
+            </summary>
+            <param name="projectId">The project identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.GetDate(System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Parses the date and returns a date in UTC format.
+            </summary>
+            <param name="metadata">The metadata.</param>
+            <param name="fieldName">Name of the field.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectManager.Ping">
+            <summary>
+            Pings this instance.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.#ctor(UL.Aria.Service.Relay.Manager.IProxyConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Manager.RelayProductServiceProxy"/> class.
+            </summary>
+            <param name="configurationSource">The configuration source.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.#ctor(System.ServiceModel.Web.WebChannelFactory{UL.Aria.Service.Contracts.Service.IProjectService})">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Enterprise.Foundation.Client.ServiceAgentManagedProxy`1"/> class.
+            </summary>
+            <param name="serviceProxyFactory">The service proxy factory.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.Fetch(System.String)">
+            <summary>
+            Gets the profile by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns>
+            ProfileDto
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.GetProjectDownloadById(System.String)">
+            <summary>
+            Gets the project download by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.Update(System.String,UL.Aria.Service.Contracts.Dto.ProjectDto)">
+            <summary>
+            Updates the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="project">The project.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.GetMultipleProjectDownload(System.String)">
+            <summary>
+            Gets the project download by id.
+            </summary>
+            <param name="ids">The ids, pipe delimited.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Manager.RelayProjectServiceProxy.Validate(System.String,UL.Aria.Service.Contracts.Dto.ProjectDto)">
+            <summary>
+            Validates the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="project">The project.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Service.RelayProductService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProductService.#ctor(UL.Aria.Service.Relay.Manager.IRelayProductManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Service.RelayProductService"/> class.
+            </summary>
+            <param name="relayProductManager">The relay product manager.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProductService.GetProductById(System.String)">
+            <summary>
+                Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UL.Aria.Service.Relay.Service.RelayProjectService">
+            <summary>
+                Implments <see cref="T:UL.Aria.Service.Contracts.Service.IRelayProjectService"/> to service project fetches.
+            </summary>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.#ctor(UL.Aria.Service.Relay.Manager.IRelayProjectManager,UL.Aria.Service.Relay.Manager.IRelayCompanyManager,UL.Enterprise.Foundation.Mapper.IMapperRegistry)">
+            <summary>
+                Initializes a new instance of the <see cref="T:UL.Aria.Service.Relay.Service.RelayProjectService"/> class.
+            </summary>
+            <param name="relayProjectManager">The relay project manager.</param>
+            <param name="relayCompanyManager">The relay company manager.</param>
+            <param name="mapperRegistry">The mapper registry.</param>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.GetProjectById(System.String)">
+            <summary>
+                Gets the product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.SearchProjects(UL.Aria.Service.Contracts.Dto.Integration.FulfillmentOrderProjectSearchRequest,System.Boolean)">
+            <summary>
+                Searches the projects.
+            </summary>
+            <param name="fulfillmentProjectSearchRequest"></param>
+            <param name="includeDetail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.GetAllProjectDocuments(System.String)">
+            <summary>
+                Gets the project documents.
+            </summary>
+            <param name="projectId">The project identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.Ping">
+            <summary>
+                Pings this instance.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:UL.Aria.Service.Relay.Service.RelayProjectService.SetAccountNumberFilter(UL.Aria.Service.Contracts.Dto.Integration.FulfillmentProjectSearchField,UL.Aria.Service.Contracts.Dto.Integration.FulfillmentOrderProjectSearchFilter,UL.Aria.Service.Contracts.Dto.SearchCriteriaDto)">
+            <summary>
+                Sets the account number filter.
+            </summary>
+            <param name="accountNumber">The account number.</param>
+            <param name="fulfillmentProjectSearchCriteria">The fulfillment project search criteria.</param>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns>
+                <value>false</value>
+                if a matching company is not found,
+                <value>true</value>
+                if it is, or if the criteria did not contain an accout number.
+                If
+                <value>true</value>
+                , then it also sets the company id filter.
+            </returns>
+        </member>
+    </members>
+</doc>
